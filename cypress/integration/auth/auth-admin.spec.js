@@ -4,6 +4,8 @@ describe('Visit admin and authenticate', () => {
     });
     it('Visit admin and provide wrong credentials', () => {
         cy.loginFail();
-        cy.get('.notification').contains('Wrong email and/or password').should('be.visible');
+        cy.get('.notification').
+        contains('Wrong email and/or password').
+        should('be.visible');
     });
 });
