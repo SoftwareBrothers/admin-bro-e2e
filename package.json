@@ -1,0 +1,25 @@
+{
+  "name": "admin-bro-e2e",
+  "version": "1.0.0",
+  "description": "Cypress e2e tests for Admin-Bro",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^3.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoftwareBrothers/admin-bro-e2e.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SoftwareBrothers/admin-bro-e2e/issues"
+  },
+  "homepage": "https://github.com/SoftwareBrothers/admin-bro-e2e#readme"
+}
