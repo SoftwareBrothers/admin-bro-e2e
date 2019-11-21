@@ -1,0 +1,14 @@
+{
+    "extends": ["plugin:cypress/recommended"],
+    "rules": {
+        "indent": ["error", 2],
+        "eol-last": ["error", "always"],
+        "max-len": ["error", { "code": 80 }],
+        "semi": ["error", "always"],
+        "quotes": ["error", "single"],
+        "comma-dangle": ["error", "always-multiline"],
+        "object-curly-spacing": ["error", "always"],
+        "arrow-parens": ["error", "as-needed"],
+        "linebreak-style": 0
+    }
+}

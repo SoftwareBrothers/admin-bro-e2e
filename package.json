@@ -5,12 +5,14 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "^3.6.1"
+    "cypress": "^3.6.1",
+    "eslint": "^6.6.0",
+    "eslint-plugin-cypress": "^2.7.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "fix": "eslint --fix .",
     "cypress:open": "cypress open"
-
   },
   "repository": {
     "type": "git",
