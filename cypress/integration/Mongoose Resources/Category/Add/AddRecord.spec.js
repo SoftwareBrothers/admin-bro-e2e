@@ -10,6 +10,6 @@ describe('Add record to the category', () => {
       .get('#createdAt').click()
       .get('.pickadate').click()
       .get('.today').eq(2).click()
-      .get('.button').contains('Save').click();
+      .get('.button').contains('Save').click(); 
   }); 
 });
