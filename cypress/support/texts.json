@@ -1,0 +1,25 @@
+{
+
+  "NAVBAR_TEXTS": {
+    "MONGOOSE": {
+      "CATEGORY": "Category"
+    }
+  },
+  "COMMON": {
+    "BUTTONS": {
+      "ADD_NEW": "Add new"
+    },
+    "VALIDATION_TEXTS": {
+      "TITLE_FIELD": "Path `title` is required.",
+      "DISAPPEARING_DIV_VALIDATION": "There were errors in the record object. Check them out"
+    },
+    "INPUTS_TEXTS": {
+      "RANDOME_NUMBERS": "123533456789",
+      "OWNER_RANDOM": "random"
+    },
+    "SAVE": "Save",
+    "RANDOME_TEXT": "something"
+
+  }
+
+}
