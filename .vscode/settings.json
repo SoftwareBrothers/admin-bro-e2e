@@ -1,24 +1,24 @@
 {
-    "eslint.validate": [
-        {
-            "language": "javascript",
-            "autoFix": true
-        },
-        {
-            "language": "typescript",
-            "autoFix": true
-        }
-    ],
-    "eslint.autoFixOnSave": true,
-    "editor.formatOnSave": true,
-    "eslint.enable": true,
-    "eslint.nodePath": "node_modules/.bin/eslint",
-    "eslint.trace.server": "messages",
-    "[javascript]": {
-        "editor.formatOnSave": false
+  "eslint.validate": [
+    {
+      "language": "javascript",
+      "autoFix": true
     },
-    "[typescript]": {
-        "editor.formatOnSave": false
-    },
-    "eslint.run": "onSave"
+    {
+      "language": "typescript",
+      "autoFix": true
+    }
+  ],
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "eslint.nodePath": "node_modules/.bin/eslint",
+  "eslint.trace.server": "messages",
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "eslint.run": "onSave"
 }
