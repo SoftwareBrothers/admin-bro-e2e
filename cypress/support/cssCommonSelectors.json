@@ -17,12 +17,19 @@
     },
     "buttons": {
       "save": "button[type = 'submit']",
-      "addNew": "a[href=\"/admin/resources/Category/actions/new\"]"
+      "addNew": "a[href=\"/admin/resources/Category/actions/new\"]",
+      "remove": ".icomoon-remove-2"
+
     },
     "validationFields": {
       "inputValidationField": ".is-danger",
       "disappearingDivValidation": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
-    }
+    },
+    "boardView": {
+      "table": "table",
+      "tableTr": "tr",
+      "tableTds": "td"
 
+    }
   }
 }
