@@ -1,14 +1,14 @@
 import {
   mongoose,
-  leftNavbar
-} from '../../../../support/cssCommonSelectors'
+  leftNavbar,
+} from '../../../../support/cssCommonSelectors';
 import {
   common,
-  navbarTexts
-} from '../../../../support/texts'
+  navbarTexts,
+} from '../../../../support/texts';
 
-const { inputs, calendar, buttons, validationFields } = mongoose
-const { inputsTexts, validationTexts, buttons: textButtons } = common
+const { inputs, calendar, buttons, validationFields } = mongoose;
+const { inputsTexts, validationTexts, buttons: textButtons } = common;
 
 describe('Add record to the category', () => {
   it('Check title validation', () => {

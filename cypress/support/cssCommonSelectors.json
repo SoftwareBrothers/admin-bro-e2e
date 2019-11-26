@@ -5,7 +5,6 @@
     }
   },
   "mongoose": {
-
     "inputs": {
       "nestedValue": "#nested\\.value",
       "nestedFiled": "#nested\\.field",
@@ -23,6 +22,5 @@
       "inputValidationField": ".is-danger",
       "disappearingDivValidation": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
     }
-
   }
 }
