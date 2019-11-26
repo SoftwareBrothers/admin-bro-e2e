@@ -1,27 +1,27 @@
 {
-  "LEFT_NAVBAR": {
-    "MONGOOSE": {
-      "CATEGORY": "a[href=\"/admin/resources/Category/actions/list\"]"
+  "leftNavbar": {
+    "mongoose": {
+      "category": "a[href=\"/admin/resources/Category/actions/list\"]"
     }
   },
-  "MOONGOOSE": {
+  "mongoose": {
 
-    "INPUTS": {
-      "NESTED_VALUE": "#nested\\.value",
-      "NESTED_FILED": "#nested\\.field",
-      "OWNER": "#owner",
-      "CREATED_AT": "#createdAt"
+    "inputs": {
+      "nestedValue": "#nested\\.value",
+      "nestedFiled": "#nested\\.field",
+      "owner": "#owner",
+      "createdAt": "#createdAt"
     },
-    "CALENDAR": {
-      "TODAY_CLASS": ".today"
+    "calendar": {
+      "todayClass": ".today"
     },
-    "BUTTONS": {
-      "SAVE": "button[type='submit']",
-      "ADD_NEW": "a[href=\"/admin/resources/Category/actions/new\"]"
+    "buttons": {
+      "save": "button[type = 'submit']",
+      "addNew": "a[href=\"/admin/resources/Category/actions/new\"]"
     },
-    "VALIDATION_FIELDS": {
-      "INPUT_VALIDATION_FIELD": ".is-danger",
-      "DISAPPEARING_DIV_VALIDATION": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
+    "validationFields": {
+      "inputValidationField": ".is-danger",
+      "disappearingDivValidation": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
     }
 
   }

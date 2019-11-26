@@ -1,24 +1,23 @@
 {
-
-  "NAVBAR_TEXTS": {
-    "MONGOOSE": {
-      "CATEGORY": "Category"
+  "navbarTexts": {
+    "mongoose": {
+      "category": "Category"
     }
   },
-  "COMMON": {
-    "BUTTONS": {
-      "ADD_NEW": "Add new"
+  "common": {
+    "buttons": {
+      "addNew": "Add new"
     },
-    "VALIDATION_TEXTS": {
-      "TITLE_FIELD": "Path `title` is required.",
-      "DISAPPEARING_DIV_VALIDATION": "There were errors in the record object. Check them out"
+    "validationTexts": {
+      "titleField": "Path `title` is required.",
+      "disappearingDivValidation": "There were errors in the record object. Check them out"
     },
-    "INPUTS_TEXTS": {
-      "RANDOME_NUMBERS": "123533456789",
-      "OWNER_RANDOM": "random"
+    "inputsTexts": {
+      "randomNumbers": "123533456789",
+      "ownerRandom": "random owner"
     },
-    "SAVE": "Save",
-    "RANDOME_TEXT": "something"
+    "save": "Save",
+    "randomText": "something"
 
   }
 
