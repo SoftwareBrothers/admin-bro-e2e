@@ -1,7 +1,7 @@
 describe('Add record to the category', () => {
   it('Go to category and add record', () => {
     cy.loginSuccess()
-      .get('li').contains('Category').click()
+      .get('li').contains('category').click()
       .get('.button').contains('Add new').click()
       .get('#title').type('something')
       .get('[name="nested.value"]').type('123')

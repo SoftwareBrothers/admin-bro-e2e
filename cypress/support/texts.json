@@ -1,0 +1,22 @@
+{
+  "navbarTexts": {
+    "mongoose": {
+      "category": "Category"
+    }
+  },
+  "common": {
+    "buttons": {
+      "addNew": "Add new"
+    },
+    "errorMsg": {
+      "titleField": "Path `title` is required.",
+      "validationDiv": "There were errors in the record object. Check them out"
+    },
+    "inputsTexts": {
+      "randomNumbers": "123533456789",
+      "ownerRandom": "random owner"
+    },
+    "save": "Save",
+    "randomText": "something"
+  }
+}

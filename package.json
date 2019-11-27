@@ -10,8 +10,8 @@
     "eslint-plugin-cypress": "^2.7.0"
   },
   "scripts": {
-    "lint": "eslint .",
-    "fix": "eslint --fix .",
+    "lint": "eslint cypress",
+    "fix": "eslint --fix cypress",
     "cypress:open": "cypress open"
   },
   "repository": {

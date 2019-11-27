@@ -1,0 +1,26 @@
+{
+  "leftNavbar": {
+    "mongoose": {
+      "category": "a[href=\"/admin/resources/Category/actions/list\"]"
+    }
+  },
+  "mongoose": {
+    "inputs": {
+      "nestedValue": "#nested\\.value",
+      "nestedFiled": "#nested\\.field",
+      "owner": "#owner",
+      "createdAt": "#createdAt"
+    },
+    "calendar": {
+      "todayClass": ".today"
+    },
+    "buttons": {
+      "save": "button[type = 'submit']",
+      "addNew": "a[href=\"/admin/resources/Category/actions/new\"]"
+    },
+    "validationFields": {
+      "validationInput": ".is-danger",
+      "validationDiv": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
+    }
+  }
+}

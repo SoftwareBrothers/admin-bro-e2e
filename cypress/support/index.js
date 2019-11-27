@@ -16,5 +16,5 @@
 // Import commands.js using ES2015 syntax:
 import './auth';
 
-// Alternatively you can use CommonJS syntax:
+// Alternatively you can use commonJS syntax:
 // require('./commands')
