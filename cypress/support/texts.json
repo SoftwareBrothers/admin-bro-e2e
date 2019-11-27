@@ -8,9 +8,9 @@
     "buttons": {
       "addNew": "Add new"
     },
-    "validationTexts": {
+    "errorMsg": {
       "titleField": "Path `title` is required.",
-      "disappearingDivValidation": "There were errors in the record object. Check them out"
+      "validationDiv": "There were errors in the record object. Check them out"
     },
     "inputsTexts": {
       "randomNumbers": "123533456789",

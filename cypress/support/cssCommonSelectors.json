@@ -19,8 +19,8 @@
       "addNew": "a[href=\"/admin/resources/Category/actions/new\"]"
     },
     "validationFields": {
-      "inputValidationField": ".is-danger",
-      "disappearingDivValidation": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
+      "validationInput": ".is-danger",
+      "validationDiv": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
     }
   }
 }

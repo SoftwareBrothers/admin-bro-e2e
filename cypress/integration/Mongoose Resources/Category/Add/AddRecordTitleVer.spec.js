@@ -8,10 +8,10 @@ import {
 } from '../../../../support/texts';
 
 const { inputs, calendar, buttons, validationFields } = mongoose;
-const { inputsTexts, validationTexts, buttons: textButtons } = common;
+const { inputsTexts,buttons: textButtons, errorMsg } = common;
 
 describe('Add record to the category', () => {
-  it('Check title validation', () => {
+  it('return error wjh', () => {
     cy.loginSuccess() 
       .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
       .get(buttons.addNew).contains(textButtons.addNew).click()
@@ -19,9 +19,9 @@ describe('Add record to the category', () => {
       .get(inputs.nestedFiled).type(common.randomText)
       .get(inputs.owner).type(inputsTexts.ownerRandom)
       .get(inputs.createdAt).click()
-      .get(calendar.todayClass).eq(2).click()
-      .get(buttons.save).contains(common.save).click()
-      .get(validationFields.inputValidationField).contains(validationTexts.titleField)
-      .get(validationFields.disappearingDivValidation).should('be.visible').contains(validationTexts.disappearingDivValidation);
+      .get(calendar.todayClass).eq(2).click() 
+      .get(buttons.save).contains(common.save).click() 
+      .get(validationFields.validationInput).contains(errorMsg.titleField)
+      .get(validationFields.validationDiv).should('be.visible').contains(errorMsg.validationDiv);
   });
 });
