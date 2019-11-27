@@ -1,30 +1,28 @@
 import {
   mongoose,
-  leftNavbar
-} from '../../../../support/cssCommonSelectors'
+  leftNavbar,
+} from '../../../../support/cssCommonSelectors';
 import {
   common,
-  navbarTexts
-} from '../../../../support/texts'
-import { clearScreenDown } from 'readline'
+  navbarTexts,
+} from '../../../../support/texts';
+import { clearScreenDown } from 'readline';
 
-const { boardView, buttons} = mongoose
-const{buttons: buttonsTexts} = common
-
+const { boardView, buttons } = mongoose;
 
 describe('Delete record',function(){
-  it('By going in, click on title, and click on remove button',function(){
+  it('From record details page and clicking remove button',function(){
     cy.loginSuccess() 
-    .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
-    .get(boardView.table).then(($table)=>{
-      const id = $table.find(boardView.tableTds).eq(1);
-      cy.wrap(id).as('numberId')
-    })
+      .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
+      .get(boardView.table).then($table=>{
+        const idofFirstRecord = $table.find(boardView.tableTds).eq(1);
+        cy.wrap(idofFirstRecord).as('firstRecordId');
+      });
     cy.get(boardView.tableTds).first().find('a').click()
-    .get(buttons.remove).click()
-    .get(boardView.table).then(($table)=>{ 
-      const id2 = $table.find(boardView.tableTds).eq(1).text();
-      expect(this.numberId.text()).not.to.equal(id2);
-    })
-  })
-}) 
+      .get(buttons.remove).click()
+      .get(boardView.table).then($table=>{ 
+        const firstRecordIdAfeterDelete = $table.find(boardView.tableTds).eq(1).text();
+        expect(this.firstRecordId.text()).not.to.equal(firstRecordIdAfeterDelete);
+      });
+  });
+}); 

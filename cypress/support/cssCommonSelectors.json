@@ -22,19 +22,14 @@
 
     },
     "validationFields": {
-<<<<<<< HEAD
-      "inputValidationField": ".is-danger",
-      "disappearingDivValidation": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
+      "validationInput": ".is-danger",
+      "validationDiv": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
     },
     "boardView": {
       "table": "table",
       "tableTr": "tr",
       "tableTds": "td"
 
-=======
-      "validationInput": ".is-danger",
-      "validationDiv": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
->>>>>>> 0f91b9a... changes added with Marek plus lint fixes, also changed lint to 100 max-len
     }
   }
 }
