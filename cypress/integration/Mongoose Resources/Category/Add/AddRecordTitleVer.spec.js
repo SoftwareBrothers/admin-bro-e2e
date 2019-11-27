@@ -10,8 +10,8 @@ import {
 const { inputs, calendar, buttons, validationFields } = mongoose;
 const { inputsTexts,buttons: textButtons, errorMsg } = common;
 
-describe('Add record to the category', () => {
-  it('return error wjh', () => {
+describe('Add uncorrect filled record to the category', function(){
+  it('return error when title field is empty', function() {
     cy.loginSuccess() 
       .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
       .get(buttons.addNew).contains(textButtons.addNew).click()

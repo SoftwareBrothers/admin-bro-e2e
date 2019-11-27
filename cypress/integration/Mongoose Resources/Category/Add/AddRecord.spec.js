@@ -1,7 +1,7 @@
 describe('Add record to the category', () => {
   it('Go to category and add record', () => {
     cy.loginSuccess()
-      .get('li').contains('category').click()
+      .get('li').contains('Category').click()
       .get('.button').contains('Add new').click()
       .get('#title').type('something')
       .get('[name="nested.value"]').type('123')
@@ -10,6 +10,6 @@ describe('Add record to the category', () => {
       .get('#createdAt').click()
       .get('.pickadate').click()
       .get('.today').eq(2).click()
-      .get('.button').contains('Save').click(); 
+      .get('.button').contains('Save').click();
   }); 
 });

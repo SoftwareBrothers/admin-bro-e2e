@@ -6,7 +6,9 @@
   },
   "common": {
     "buttons": {
-      "addNew": "Add new"
+      "addNew": "Add new",
+      "remove": "Remove"
+
     },
     "errorMsg": {
       "titleField": "Path `title` is required.",
