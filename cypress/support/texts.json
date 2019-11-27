@@ -16,7 +16,10 @@
     },
     "inputsTexts": {
       "randomNumbers": "123533456789",
-      "ownerRandom": "random owner"
+      "ownerRandom": "random owner",
+      "title": "Ice age",
+      "nestedValue": "50400",
+      "nestedField": "10-900 arnold"
     },
     "save": "Save",
     "randomText": "something"

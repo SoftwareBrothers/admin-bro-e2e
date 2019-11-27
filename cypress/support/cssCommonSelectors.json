@@ -10,15 +10,21 @@
       "nestedValue": "#nested\\.value",
       "nestedFiled": "#nested\\.field",
       "owner": "#owner",
-      "createdAt": "#createdAt"
+      "createdAt": "#createdAt",
+      "title": "#title"
     },
     "calendar": {
-      "todayClass": ".today"
+      "month": ".open .dayContainer",
+      "day": ".flatpickr-day",
+      "todayClass": ".open .dayContainer .today"
+
     },
     "buttons": {
       "save": "button[type = 'submit']",
       "addNew": "a[href=\"/admin/resources/Category/actions/new\"]",
-      "remove": ".icomoon-remove-2"
+      "remove": ".icomoon-remove-2",
+      "edit": ".icomoon-edit",
+      "back": ".icomoon-pagination-left"
 
     },
     "validationFields": {
