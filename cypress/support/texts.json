@@ -1,7 +1,8 @@
 {
   "navbarTexts": {
     "mongoose": {
-      "category": "Category"
+      "category": "Category",
+      "comment": "Comment"
     }
   },
   "common": {
