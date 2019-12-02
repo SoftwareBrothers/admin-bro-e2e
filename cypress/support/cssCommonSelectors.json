@@ -34,7 +34,8 @@
     "boardView": {
       "table": "table",
       "tableTr": "tr",
-      "tableTds": "td"
+      "tableTds": "td",
+      "tableBody": "tbody"
 
     }
   }
