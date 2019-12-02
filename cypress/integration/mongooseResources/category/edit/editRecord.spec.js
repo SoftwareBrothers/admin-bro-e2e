@@ -18,6 +18,7 @@ describe('Editing first record on the list',function(){
     cy.loginSuccess() 
       .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
+        // numbers here represents indexes of tdsfrom first tr, with title etc
         formValues = getFormValues($tr, [0,2,3,4,5]);
       })
       .get(boardView.tableTds).first().find('a').click()
@@ -32,6 +33,7 @@ describe('Editing first record on the list',function(){
       .wait(3000)
       .get(buttons.back).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
+        // numbers here represents indexes of tdsfrom first tr, with title etc
         const formValuesChanged = getFormValues($tr, [0,2,3,4,5]);
         expect(formValues).to.deep.not.eq(formValuesChanged);  
       });
