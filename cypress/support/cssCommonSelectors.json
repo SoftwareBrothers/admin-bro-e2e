@@ -2,6 +2,10 @@
   "leftNavbar": {
     "mongoose": {
       "category": "a[href=\"/admin/resources/Category/actions/list\"]"
+    },
+    "sequelize": {
+      "users": "a[href=\"/admin/resources/Users/actions/list\"]",
+      "favouritePlaces": "a[href=\"/admin/resources/FavouritePlaces/actions/list\"]"
     }
   },
   "mongoose": {
@@ -18,7 +22,6 @@
       "save": "button[type = 'submit']",
       "addNew": "a[href=\"/admin/resources/Category/actions/new\"]",
       "remove": ".icomoon-remove-2"
-
     },
     "validationFields": {
       "validationInput": ".is-danger",
@@ -28,7 +31,15 @@
       "table": "table",
       "tableTr": "tr",
       "tableTds": "td"
-
+    }
+  },
+  "sequelize": {
+    "inputs": {
+      "email": "#email",
+      "isMyFavourite": "#isMyFavourite",
+      "lastName": "#lastName",
+      "firstName": "#firstName",
+      "gender": "[for='gender']"
     }
   }
 }
