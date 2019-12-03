@@ -11,7 +11,9 @@
       "nestedFiled": "#nested\\.field",
       "owner": "#owner",
       "createdAt": "#createdAt",
-      "title": "#title"
+      "title": "#title",
+      "checkBoxFlagged": "#flagged",
+      "content": "#content"
     },
     "calendar": {
       "month": ".open .dayContainer",
@@ -24,7 +26,10 @@
       "addNew": "a[href=\"/admin/resources/Category/actions/new\"]",
       "remove": ".icomoon-remove-2",
       "edit": ".icomoon-edit",
-      "back": ".icomoon-pagination-left"
+      "back": ".icomoon-pagination-left",
+      "addIcon": ".icomoon-add",
+      "dropDownButton": ".css-1wy0on6",
+      "dropDownOption": "#react-select-3-option-0"
 
     },
     "validationFields": {
@@ -35,8 +40,12 @@
       "table": "table",
       "tableTr": "tr",
       "tableTds": "td",
-      "tableBody": "tbody"
+      "tableBody": "tbody",
+      "tableTdClass": ".record-in-list__Td-sc-145opzz-0",
 
+      "sorting": {
+        "sortByIdButton": "a[href=\"/?direction=desc&sortBy=_id\"]"
+      }
     }
   }
 }
