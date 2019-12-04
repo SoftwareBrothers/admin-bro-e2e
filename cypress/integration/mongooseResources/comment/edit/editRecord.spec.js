@@ -27,7 +27,6 @@ describe('Editing first comment record on the list',function(){
       .get(buttons.dropDownButton).click()
       .get(buttons.dropDownOptionsClass).then($elements=>{
         $elements.not(formValues[0]).first().click();
-        const category = $elements.not(formValues[0]).first().text();
       });
     cy.get(inputs.checkBoxFlagged).click() 
       .get(inputs.content).clear().type(inputsTexts.randomNumbers) 
@@ -41,6 +40,5 @@ describe('Editing first comment record on the list',function(){
         expect(formValues).to.not.eql(changedFormValues);  
         expect(idNumberChanged.text()).to.be.equal(this.idNumber.text()); 
       });    
-
   });  
 }); 
