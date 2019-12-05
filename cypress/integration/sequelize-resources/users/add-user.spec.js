@@ -11,8 +11,9 @@ describe('Add new user to Sequelize Resources', () => {
       .get(sequelize.inputs.lastName).type('Lastname')
       .get(sequelize.inputs.firstName).type('Firstname')
       .get(sequelize.inputs.gender).next().click()
-      .wait(200)
-      .get('#react-select-3-option-1').click() // female - 'option-1'
-      .get('.btn-text').contains('Save').click();
+      .get('#react-select-3-option-0').click() // male - 'option-0' | female - 'option-1'
+      .get('.btn-text').contains('Save').click()
+      .get('.success').should('be.visible')
+      .get('.success').should('contain', 'Record has been successfully created!');
   });
 });
