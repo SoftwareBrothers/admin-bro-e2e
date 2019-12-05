@@ -16,6 +16,8 @@
       "content": "#content"
     },
     "calendar": {
+      "openCalendar": ".open",
+      "today": ".today",
       "month": ".open .dayContainer",
       "day": ".flatpickr-day",
       "todayClass": ".open .dayContainer .today"

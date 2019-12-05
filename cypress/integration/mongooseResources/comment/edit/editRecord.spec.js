@@ -6,6 +6,9 @@ import {
   common,
   navbarTexts,
 } from '../../../../support/texts';
+import{
+  intersection,
+} from 'lodash';
 
 import { getFormValues } from '../../../../support/helpersMethods';
 
@@ -29,16 +32,17 @@ describe('Editing first comment record on the list',function(){
         $elements.not(formValues[0]).first().click();
       });
     cy.get(inputs.checkBoxFlagged).click() 
-      .get(inputs.content).clear().type(inputsTexts.randomNumbers) 
+      .get(inputs.content).clear().type(inputsTexts.randomNumbers)  
       .get(buttons.save).contains(common.save).click()
       .wait(1000)
       .get(buttons.back).click() 
-      .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
+      .get(boardView.table).should('be.visible').find(boardView.tableTr).eq(1).then($tr=>{
         // numbers here represents indexes of tdsfrom first tr, with title etc
         const idNumberChanged = $tr.find(boardView.tableTdClass).eq(0);
         const changedFormValues = getFormValues($tr, [1,2,3]);
-        expect(formValues).to.not.eql(changedFormValues);  
+        // checking does any value from arrays is common
+        expect(intersection(formValues,changedFormValues )).to.be.empty;
         expect(idNumberChanged.text()).to.be.equal(this.idNumber.text()); 
-      });    
-  });  
+      });      
+  });   
 }); 
