@@ -1,7 +1,8 @@
 {
   "leftNavbar": {
     "mongoose": {
-      "category": "a[href=\"/admin/resources/Category/actions/list\"]"
+      "category": "a[href=\"/admin/resources/Category/actions/list\"]",
+      "comment": "a[href=\"/admin/resources/Comment/actions/list\"]"
     },
     "sequelize": {
       "users": "a[href=\"/admin/resources/Users/actions/list\"]",
@@ -13,15 +14,25 @@
       "nestedValue": "#nested\\.value",
       "nestedFiled": "#nested\\.field",
       "owner": "#owner",
-      "createdAt": "#createdAt"
+      "createdAt": "#createdAt",
+      "title": "#title",
+      "checkBoxFlagged": "#flagged",
+      "content": "#content"
     },
     "calendar": {
-      "todayClass": ".today"
+      "month": ".open .dayContainer",
+      "day": ".flatpickr-day",
+      "todayClass": ".open .dayContainer .today"
     },
     "buttons": {
       "save": "button[type = 'submit']",
       "addNew": "a[href=\"/admin/resources/Category/actions/new\"]",
-      "remove": ".icomoon-remove-2"
+      "remove": ".icomoon-remove-2",
+      "edit": ".icomoon-edit",
+      "back": ".icomoon-pagination-left",
+      "addIcon": ".icomoon-add",
+      "dropDownButton": ".css-1wy0on6",
+      "dropDownOption": "#react-select-3-option-0"
     },
     "validationFields": {
       "validationInput": ".is-danger",
@@ -39,7 +50,13 @@
       "isMyFavourite": "#isMyFavourite",
       "lastName": "#lastName",
       "firstName": "#firstName",
-      "gender": "[for='gender']"
+      "gender": "[for='gender']",
+      "tableTds": "td",
+      "tableBody": "tbody",
+      "tableTdClass": ".record-in-list__Td-sc-145opzz-0",
+      "sorting": {
+        "sortByIdButton": "a[href=\"/?direction=desc&sortBy=_id\"]"
+      }
     }
   }
 }

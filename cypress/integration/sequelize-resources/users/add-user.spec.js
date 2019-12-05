@@ -1,4 +1,5 @@
 import { sequelize, leftNavbar } from '../../../support/cssCommonSelectors';
+import { common } from '../../../support/texts';
 
 describe('Add new user to Sequelize Resources', () => {
   it('Create a new user', () => {
@@ -14,6 +15,6 @@ describe('Add new user to Sequelize Resources', () => {
       .get('#react-select-3-option-0').click() // male - 'option-0' | female - 'option-1'
       .get('.btn-text').contains('Save').click()
       .get('.success').should('be.visible')
-      .get('.success').should('contain', 'Record has been successfully created!');
+      .get('.success').should('contain', common.recordCreated);
   });
 });

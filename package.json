@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Cypress e2e tests for Admin-Bro",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
   "devDependencies": {
     "cypress": "^3.6.1",
     "eslint": "^6.6.0",

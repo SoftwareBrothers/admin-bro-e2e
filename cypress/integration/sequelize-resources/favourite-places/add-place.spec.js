@@ -1,4 +1,5 @@
 import faker from 'faker';
+import { common } from '../../../support/texts';
 
 describe('Enters favourite places', () => {
   it('Should add new record', () => {
@@ -13,6 +14,6 @@ describe('Enters favourite places', () => {
       .get('.today').eq(6).click()
       .get('.button').contains('Save').click()
       .get('.success').should('be.visible')
-      .get('.success').should('contain', 'Record has been successfully created!');      
+      .get('.success').should('contain', common.recordCreated);      
   });
 });

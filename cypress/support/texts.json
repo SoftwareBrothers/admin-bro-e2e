@@ -1,14 +1,14 @@
 {
   "navbarTexts": {
     "mongoose": {
-      "category": "Category"
+      "category": "Category",
+      "comment": "Comment"
     }
   },
   "common": {
     "buttons": {
       "addNew": "Add new",
       "remove": "Remove"
-
     },
     "errorMsg": {
       "titleField": "Path `title` is required.",
@@ -16,9 +16,13 @@
     },
     "inputsTexts": {
       "randomNumbers": "123533456789",
-      "ownerRandom": "random owner"
+      "ownerRandom": "random owner",
+      "title": "Aarons age",
+      "nestedValue": "50400",
+      "nestedField": "10-900 arnold"
     },
     "save": "Save",
-    "randomText": "something"
+    "randomText": "something",
+    "recordCreated": "Record has been successfully created!"
   }
 }
