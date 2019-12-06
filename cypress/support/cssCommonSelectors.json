@@ -2,7 +2,8 @@
   "leftNavbar": {
     "mongoose": {
       "category": "a[href=\"/admin/resources/Category/actions/list\"]",
-      "comment": "a[href=\"/admin/resources/Comment/actions/list\"]"
+      "comment": "a[href=\"/admin/resources/Comment/actions/list\"]",
+      "complicated": "a[href=\"/admin/resources/Complicated/actions/list\"]"
     }
   },
   "mongoose": {
@@ -13,7 +14,13 @@
       "createdAt": "#createdAt",
       "title": "#title",
       "checkBoxFlagged": "#flagged",
-      "content": "#content"
+      "content": "#content",
+      "name": "#name",
+      "personAge": "#nestedDetails.age",
+      "height": "#nestedDetails.height",
+      "birthPlace": "#nestedDetails.placeOfBirth",
+      "extremlyNested": "#nestedDetails.nested.extremelyNested"
+
     },
     "calendar": {
       "openCalendar": ".open",
