@@ -1,11 +1,11 @@
 import {
   mongoose,
   leftNavbar,
-} from '../../../support/cssCommonSelectors';
+} from '../../../../support/cssCommonSelectors';
 import {
   common,
   navbarTexts,
-} from '../../../support/texts';
+} from '../../../../support/texts';
 
 const { inputs, calendar, buttons, boardView, boardView:{ sorting } } = mongoose;
 const { inputsTexts } = common;

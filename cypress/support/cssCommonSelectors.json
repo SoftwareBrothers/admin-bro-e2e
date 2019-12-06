@@ -16,6 +16,8 @@
       "content": "#content"
     },
     "calendar": {
+      "openCalendar": ".open",
+      "today": ".today",
       "month": ".open .dayContainer",
       "day": ".flatpickr-day",
       "todayClass": ".open .dayContainer .today"
@@ -23,13 +25,13 @@
     },
     "buttons": {
       "save": "button[type = 'submit']",
-      "addNew": "a[href=\"/admin/resources/Category/actions/new\"]",
       "remove": ".icomoon-remove-2",
       "edit": ".icomoon-edit",
       "back": ".icomoon-pagination-left",
       "addIcon": ".icomoon-add",
       "dropDownButton": ".css-1wy0on6",
-      "dropDownOption": "#react-select-3-option-0"
+      "dropDownOption": "#react-select-3-option-0",
+      "dropDownOptionsClass": ".css-kjz24b-option"
 
     },
     "validationFields": {
