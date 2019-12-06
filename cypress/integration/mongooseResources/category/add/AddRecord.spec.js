@@ -1,15 +1,41 @@
+
+import {
+  mongoose,
+  leftNavbar,
+} from '../../../../support/cssCommonSelectors';
+import {
+  common,
+  navbarTexts,
+} from '../../../../support/texts';
+import { getFormValues,
+} from '../../../../support/helpersMethods';
+
+const { inputs, calendar, buttons, boardView } = mongoose;
+const { inputsTexts  } = common;
+
 describe('Add record to the category', () => {
   it('Go to category and add record', () => {
     cy.loginSuccess()
-      .get('li').contains('Category').click()
-      .get('.button').contains('Add new').click()
-      .get('#title').type('something')
-      .get('[name="nested.value"]').type('123')
-      .get('[name="nested.field"]').type('something')
-      .get('#owner').type('owner1')
-      .get('#createdAt').click()
-      .get('.pickadate').click()
-      .get('.today').eq(2).click()
-      .get('.button').contains('Save').click();
+      .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
+      .get(buttons.addIcon).click()
+      .get(inputs.title).type(inputsTexts.title)
+      .get(inputs.nestedValue).type(inputsTexts.randomNumbers)
+      .get(inputs.nestedFiled).type(common.randomText)
+      .get(inputs.owner).type(inputsTexts.ownerRandom)
+      .get(inputs.createdAt).click()
+      .get(calendar.openCalendar).find(calendar.today).click()
+      .get(buttons.save).contains(common.save).click()
+      .wait(1000)
+      .get(buttons.back).click()
+      .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{ 
+        const finputValues = getFormValues($tr, [0,2,3,4]);
+        expect(finputValues) 
+          .to.have.members([
+            inputsTexts.randomNumbers, 
+            common.randomText,
+            inputsTexts.ownerRandom,
+            inputsTexts.title,
+          ]);
+      });
   }); 
 });

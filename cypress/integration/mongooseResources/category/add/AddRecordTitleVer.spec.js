@@ -8,13 +8,13 @@ import {
 } from '../../../../support/texts';
 
 const { inputs, calendar, buttons, validationFields } = mongoose;
-const { inputsTexts,buttons: textButtons, errorMsg } = common;
+const { inputsTexts,errorMsg } = common;
 
 describe('Add incorrect filled record to the category', function(){
   it('return error when title field is empty', function() {
     cy.loginSuccess() 
       .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
-      .get(buttons.addNew).contains(textButtons.addNew).click()
+      .get(buttons.addIcon).click()
       .get(inputs.nestedValue).type(inputsTexts.randomNumbers)
       .get(inputs.nestedFiled).type(common.randomText)
       .get(inputs.owner).type(inputsTexts.ownerRandom)

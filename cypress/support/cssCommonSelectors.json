@@ -25,7 +25,6 @@
     },
     "buttons": {
       "save": "button[type = 'submit']",
-      "addNew": "a[href=\"/admin/resources/Category/actions/new\"]",
       "remove": ".icomoon-remove-2",
       "edit": ".icomoon-edit",
       "back": ".icomoon-pagination-left",
