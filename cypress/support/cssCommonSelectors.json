@@ -3,6 +3,10 @@
     "mongoose": {
       "category": "a[href=\"/admin/resources/Category/actions/list\"]",
       "comment": "a[href=\"/admin/resources/Comment/actions/list\"]"
+    },
+    "sequelize": {
+      "users": "a[href=\"/admin/resources/Users/actions/list\"]",
+      "favouritePlaces": "a[href=\"/admin/resources/FavouritePlaces/actions/list\"]"
     }
   },
   "mongoose": {
@@ -21,7 +25,6 @@
       "month": ".open .dayContainer",
       "day": ".flatpickr-day",
       "todayClass": ".open .dayContainer .today"
-
     },
     "buttons": {
       "save": "button[type = 'submit']",
@@ -32,7 +35,6 @@
       "dropDownButton": ".css-1wy0on6",
       "dropDownOption": "#react-select-3-option-0",
       "dropDownOptionsClass": ".css-kjz24b-option"
-
     },
     "validationFields": {
       "validationInput": ".is-danger",
@@ -41,10 +43,21 @@
     "boardView": {
       "table": "table",
       "tableTr": "tr",
+      "tableTds": "td"
+    }
+  },
+  "sequelize": {
+    "inputs": {
+      "email": "#email",
+      "isMyFavourite": "#isMyFavourite",
+      "lastName": "#lastName",
+      "firstName": "#firstName",
+      "gender": "[for='gender']",
+      "male": "#react-select-3-option-0",
+      "female": "#react-select-3-option-1",
       "tableTds": "td",
       "tableBody": "tbody",
       "tableTdClass": ".record-in-list__Td-sc-145opzz-0",
-
       "sorting": {
         "sortByIdButton": "a[href=\"/?direction=desc&sortBy=_id\"]"
       }

@@ -9,7 +9,6 @@
     "buttons": {
       "addNew": "Add new",
       "remove": "Remove"
-
     },
     "errorMsg": {
       "titleField": "Path `title` is required.",
@@ -23,6 +22,7 @@
       "nestedField": "10-900 arnold"
     },
     "save": "Save",
-    "randomText": "something"
+    "randomText": "something",
+    "recordCreated": "Record has been successfully created!"
   }
 }
