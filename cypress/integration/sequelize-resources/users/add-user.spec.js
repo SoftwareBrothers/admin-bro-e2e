@@ -12,7 +12,7 @@ describe('Add new user to Sequelize Resources', () => {
       .get(sequelize.inputs.lastName).type('Lastname')
       .get(sequelize.inputs.firstName).type('Firstname')
       .get(sequelize.inputs.gender).next().click()
-      .get('#react-select-3-option-0').click() // male - 'option-0' | female - 'option-1'
+      .get(sequelize.inputs.male).click()
       .get('.btn-text').contains('Save').click()
       .get('.success').should('be.visible')
       .get('.success').should('contain', common.recordCreated);
