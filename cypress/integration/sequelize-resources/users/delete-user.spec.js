@@ -1,4 +1,4 @@
-import { leftNavbar, mongoose } from '../../../support/cssCommonSelectors';
+import { leftNavbar, sequelize } from '../../../support/cssCommonSelectors';
 import { common } from '../../../support/texts';
 
 describe('Delete added user from Sequelize Resources', function () {
@@ -13,7 +13,7 @@ describe('Delete added user from Sequelize Resources', function () {
       .sortBy('Created At')
       .wait(300)
       .get('.main').contains('email@example.com').click()
-      .get(mongoose.buttons.remove).click()
+      .get(sequelize.buttons.remove).click()
       .get('.success').should('be.visible')
       .get('.success').should('contain', common.recordDeleted);
   });

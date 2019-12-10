@@ -1,4 +1,4 @@
-import { mongoose } from '../../../support/cssCommonSelectors';
+import { sequelize } from '../../../support/cssCommonSelectors';
 import { common } from '../../../support/texts';
 
 describe('go to places', function() {
@@ -8,9 +8,7 @@ describe('go to places', function() {
   });
   it('find created place and remove it', function () {
     cy.get('.label').contains('Name').next().then(function($name) {
-      const placeName = $name.text();
-      console.log('place name ', placeName);
-      cy.wrap(placeName).as('placeName');
+      cy.wrap($name.text()).as('placeName');
     });
     cy.get('.lpntyS').contains('FavouritePlaces').click()
       .sortBy('Created At')
@@ -18,7 +16,7 @@ describe('go to places', function() {
       .sortBy('Created At').then(()=>{
         cy.wait(700)
           .get('.main').contains(this.placeName).click()
-          .get(mongoose.buttons.remove).click()
+          .get(sequelize.buttons.remove).click()
           .get('.success').should('be.visible').should('contain', common.recordDeleted);
       });
   });
