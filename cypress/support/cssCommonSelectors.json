@@ -48,6 +48,8 @@
   },
   "sequelize": {
     "inputs": {
+      "name": "#name",
+      "description": "#description",
       "email": "#email",
       "isMyFavourite": "#isMyFavourite",
       "lastName": "#lastName",
@@ -58,6 +60,7 @@
       "tableTds": "td",
       "tableBody": "tbody",
       "tableTdClass": ".record-in-list__Td-sc-145opzz-0",
+      "publishedAt": "#publishedAt",
       "sorting": {
         "sortByIdButton": "a[href=\"/?direction=desc&sortBy=_id\"]"
       }
