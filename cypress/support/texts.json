@@ -23,6 +23,7 @@
     },
     "save": "Save",
     "randomText": "something",
-    "recordCreated": "Record has been successfully created!"
+    "recordCreated": "Record has been successfully created!",
+    "recordDeleted": "action delete has been successfully performed"
   }
 }

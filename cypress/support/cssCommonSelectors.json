@@ -48,6 +48,8 @@
   },
   "sequelize": {
     "inputs": {
+      "name": "#name",
+      "description": "#description",
       "email": "#email",
       "isMyFavourite": "#isMyFavourite",
       "lastName": "#lastName",
@@ -58,9 +60,20 @@
       "tableTds": "td",
       "tableBody": "tbody",
       "tableTdClass": ".record-in-list__Td-sc-145opzz-0",
+      "publishedAt": "#publishedAt",
       "sorting": {
         "sortByIdButton": "a[href=\"/?direction=desc&sortBy=_id\"]"
       }
+    },
+    "buttons": {
+      "save": "button[type = 'submit']",
+      "remove": ".icomoon-remove-2",
+      "edit": ".icomoon-edit",
+      "back": ".icomoon-pagination-left",
+      "addIcon": ".icomoon-add",
+      "dropDownButton": ".css-1wy0on6",
+      "dropDownOption": "#react-select-3-option-0",
+      "dropDownOptionsClass": ".css-kjz24b-option"
     }
   }
 }
