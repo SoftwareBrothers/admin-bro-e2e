@@ -2,7 +2,8 @@
   "navbarTexts": {
     "mongoose": {
       "category": "Category",
-      "comment": "Comment"
+      "comment": "Comment",
+      "complicated": "Complicated"
     }
   },
   "common": {
@@ -18,12 +19,12 @@
     "inputsTexts": {
       "randomNumbers": "123533456789",
       "ownerRandom": "random owner",
-      "title": "Aarons age",
+      "title": "Aaaaaarons age",
       "nestedValue": "50400",
       "nestedField": "10-900 arnold",
-      "name": "Adminator",
-      "personAge": 3,
-      "height": 176,
+      "name": "Aadminator",
+      "personAge": "3",
+      "height": "176",
       "birthPlace": "Wroclaw",
       "extremlyNested": "I am nested as hell"
     },

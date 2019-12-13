@@ -16,10 +16,10 @@
       "checkBoxFlagged": "#flagged",
       "content": "#content",
       "name": "#name",
-      "personAge": "#nestedDetails.age",
-      "height": "#nestedDetails.height",
-      "birthPlace": "#nestedDetails.placeOfBirth",
-      "extremlyNested": "#nestedDetails.nested.extremelyNested"
+      "personAge": "#nestedDetails\\.age",
+      "height": "#nestedDetails\\.height",
+      "birthPlace": "#nestedDetails\\.placeOfBirth",
+      "extremlyNested": "#nestedDetails\\.nested\\.extremelyNested"
 
     },
     "calendar": {
