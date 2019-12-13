@@ -12,12 +12,13 @@ jobs:
         uses: cypress-io/github-action@v1
         with: 
           browser: chrome
+      - name: upload
         uses: actions/upload-artifact@v1
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-        uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v1
         if: always()
         with:
           name: cypress-videos
