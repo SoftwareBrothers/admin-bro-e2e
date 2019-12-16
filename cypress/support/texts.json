@@ -12,7 +12,7 @@
     },
     "errorMsg": {
       "titleField": "Path `title` is required.",
-      "validationDiv": "There were errors in the record object. Check them out"
+      "validationDiv": "There are validation errors - check them out below"
     },
     "inputsTexts": {
       "randomNumbers": "123533456789",
@@ -24,6 +24,6 @@
     "save": "Save",
     "randomText": "something",
     "recordCreated": "Record has been successfully created!",
-    "recordDeleted": "action delete has been successfully performed"
+    "recordDeleted": "Successfully removed given record"
   }
 }
