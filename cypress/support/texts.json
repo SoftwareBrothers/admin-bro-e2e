@@ -14,7 +14,6 @@
     "buttons": {
       "addNew": "Add new",
       "remove": "Remove"
-
     },
     "errorMsg": {
       "titleField": "Path `title` is required.",
@@ -37,6 +36,8 @@
       "password": "password123"
     },
     "save": "Save",
-    "randomText": "something"
+    "randomText": "something",
+    "recordCreated": "Record has been successfully created!",
+    "recordDeleted": "action delete has been successfully performed"
   }
 }
