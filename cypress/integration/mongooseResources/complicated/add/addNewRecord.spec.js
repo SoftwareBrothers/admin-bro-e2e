@@ -23,12 +23,13 @@ describe('Add record to the complicated', () => {
       .get(inputs.height).type(inputsTexts.height)
       .get(inputs.birthPlace).type(inputsTexts.birthPlace)
       .get(inputs.extremlyNested).type(inputsTexts.extremlyNested)
-      .get(buttons.save).contains(common.save).click()
+      .get(buttons.save).contains(common.save).click() 
       .wait(1000)
       .get(buttons.back).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{ 
         const name = $tr.find(boardView.tableTdClass).eq(0);
         expect(name.text()).to.be.eql(inputsTexts.name);
+        // just extra comment
         // extracting texts from spans inside td which contains all info typed above 
         const info = getTextFromChildElements($tr.find(
           boardView.tableTdClass).eq(4),'span', [0,1,2,3,4]);
