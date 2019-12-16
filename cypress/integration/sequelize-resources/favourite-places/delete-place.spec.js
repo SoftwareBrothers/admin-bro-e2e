@@ -10,7 +10,8 @@ describe('go to places', function() {
     cy.get('.label').contains('Name').next().then(function($name) {
       cy.wrap($name.text()).as('placeName');
     });
-    cy.get('.lpntyS').contains('FavouritePlaces').click()
+    cy.get('li').contains('FavouritePlaces').click()
+      .wait(700)
       .sortBy('Created At')
       .wait(700)
       .sortBy('Created At').then(()=>{

@@ -1,3 +1,4 @@
+import faker from 'faker';
 import {
   mongoose,
   leftNavbar,
@@ -15,6 +16,11 @@ const { inputsTexts } = common;
 describe('Editing first record on the list',function(){
   it('Check does changed fields in records are applied on main page', function(){
     let formValues;
+    let editedTitle = faker.name.jobTitle();
+    let editedNestedValue = faker.random.number();
+    let editedNestedField = faker.random.number();
+    let editedOwner = faker.name.lastName();
+
     cy.loginSuccess() 
       .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
@@ -23,10 +29,10 @@ describe('Editing first record on the list',function(){
       })
       .get(boardView.tableTds).first().find('a').click()
       .get(buttons.edit).click()
-      .get(inputs.title).clear().type(inputsTexts.title)
-      .get(inputs.nestedValue).clear().type(inputsTexts.nestedValue)
-      .get(inputs.nestedFiled).clear().type(inputsTexts.nestedField)
-      .get(inputs.owner).clear().type(inputsTexts.ownerRandom)
+      .get(inputs.title).clear().type('aaaaaa'+ editedTitle)
+      .get(inputs.nestedValue).clear().type(editedNestedValue)
+      .get(inputs.nestedFiled).clear().type('aaaaa'+ editedNestedField)
+      .get(inputs.owner).clear().type('aaaa' + editedOwner)
       .get(inputs.createdAt).click() 
       .get(calendar.month).should('not.have.class', 'today').click() 
       .get(buttons.save).contains(common.save).click()
