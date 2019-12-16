@@ -2,8 +2,14 @@
   "leftNavbar": {
     "mongoose": {
       "category": "a[href=\"/admin/resources/Category/actions/list\"]",
-      "comment": "a[href=\"/admin/resources/Comment/actions/list\"]"
+      "comment": "a[href=\"/admin/resources/Comment/actions/list\"]",
+      "complicated": "a[href=\"/admin/resources/Complicated/actions/list\"]"
+    },
+    "customized": {
+      "user": "a[href=\"/admin/resources/User/actions/list\"]",
+      "page": "a[href=\"/admin/resources/Page/actions/list\"]"
     }
+
   },
   "mongoose": {
     "inputs": {
@@ -13,7 +19,12 @@
       "createdAt": "#createdAt",
       "title": "#title",
       "checkBoxFlagged": "#flagged",
-      "content": "#content"
+      "content": "#content",
+      "name": "#name",
+      "personAge": "#nestedDetails\\.age",
+      "height": "#nestedDetails\\.height",
+      "birthPlace": "#nestedDetails\\.placeOfBirth",
+      "extremlyNested": "#nestedDetails\\.nested\\.extremelyNested"
     },
     "calendar": {
       "openCalendar": ".open",
@@ -31,13 +42,61 @@
       "addIcon": ".icomoon-add",
       "dropDownButton": ".css-1wy0on6",
       "dropDownOption": "#react-select-3-option-0",
-      "dropDownOptionsClass": ".css-kjz24b-option"
+      "dropDownOptionsClass": ".css-1f8bwgw-option"
 
     },
     "validationFields": {
       "validationInput": ".is-danger",
       "validationDiv": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
     },
+    "boardView": {
+      "table": "table",
+      "tableTr": "tr",
+      "tableTds": "td",
+      "tableBody": "tbody",
+      "tableTdClass": ".record-in-list__Td-sc-145opzz-0",
+
+      "sorting": {
+        "sortByIdButton": "a[href=\"/?direction=desc&sortBy=_id\"]"
+      }
+    }
+  },
+
+  "customized": {
+    "inputs": {
+      "email": "#email",
+      "authPassword": "#auth\\.password",
+      "title": "#title",
+      "createdAt": "#createdAt",
+      "content": ""
+    },
+
+    "calendar": {
+      "openCalendar": ".open",
+      "today": ".today",
+      "month": ".open .dayContainer",
+      "day": ".flatpickr-day",
+      "todayClass": ".open .dayContainer .today"
+
+    },
+
+    "buttons": {
+      "save": "button[type = 'submit']",
+      "remove": ".icomoon-remove-2",
+      "edit": ".icomoon-edit",
+      "back": ".icomoon-pagination-left",
+      "addIcon": ".icomoon-add",
+      "dropDownButton": ".css-1wy0on6",
+      "dropDownOption": "#react-select-3-option-0",
+      "dropDownOptionsClass": ".css-1f8bwgw-option"
+
+    },
+
+    "validationFields": {
+      "validationInput": ".is-danger",
+      "validationDiv": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
+    },
+
     "boardView": {
       "table": "table",
       "tableTr": "tr",

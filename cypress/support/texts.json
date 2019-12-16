@@ -2,7 +2,12 @@
   "navbarTexts": {
     "mongoose": {
       "category": "Category",
-      "comment": "Comment"
+      "comment": "Comment",
+      "complicated": "Complicated"
+    },
+    "customized": {
+      "user": "User (custom actions example)",
+      "page": "Page (with WYSIWIG)"
     }
   },
   "common": {
@@ -13,14 +18,23 @@
     },
     "errorMsg": {
       "titleField": "Path `title` is required.",
-      "validationDiv": "There were errors in the record object. Check them out"
+      "validationDiv": "There are validation errors - check them out below.",
+      "emailField": "Path `email` is required.",
+      "authPasswordField": "Path `auth.password` is required."
     },
     "inputsTexts": {
       "randomNumbers": "123533456789",
       "ownerRandom": "random owner",
-      "title": "Aarons age",
+      "title": "Aabrons",
       "nestedValue": "50400",
-      "nestedField": "10-900 arnold"
+      "nestedField": "10-900 arnold",
+      "name": "Adminator",
+      "personAge": 3,
+      "height": 176,
+      "birthPlace": "Wroclaw",
+      "extremlyNested": "I am nested as hell",
+      "email": "aatest@wp.pl",
+      "password": "password123"
     },
     "save": "Save",
     "randomText": "something"

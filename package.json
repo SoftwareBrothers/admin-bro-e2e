@@ -16,7 +16,6 @@
     "fix": "eslint --fix cypress",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
-
   },
   "repository": {
     "type": "git",

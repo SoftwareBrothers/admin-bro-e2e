@@ -23,12 +23,15 @@ describe('Editing first comment record on the list',function(){
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
         // numbers here represents indexes of tdsfrom first tr, with title etc
         formValues = getFormValues($tr, [1,2,3]);
+        console.log(formValues);
         cy.wrap($tr.find(boardView.tableTdClass).eq(0)).as('idNumber');
       });
     cy.get(boardView.tableTds).eq(3).find('a').click()
+      .wait(1000)
       .get(buttons.edit).click() 
       .get(buttons.dropDownButton).click()
       .get(buttons.dropDownOptionsClass).then($elements=>{
+        console.log(formValues[0]);
         $elements.not(formValues[0]).first().click();
       });
     cy.get(inputs.checkBoxFlagged).click() 
@@ -44,5 +47,5 @@ describe('Editing first comment record on the list',function(){
         expect(intersection(formValues,changedFormValues )).to.be.empty;
         expect(idNumberChanged.text()).to.be.equal(this.idNumber.text()); 
       });      
-  });   
+  });    
 }); 
