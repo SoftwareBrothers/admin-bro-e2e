@@ -25,7 +25,6 @@ describe('Add record to the user (custom actions example)', function() {
       .get(buttons.back).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{ 
         const finputValues = getFormValues($tr, [0]);
-        console.log(finputValues);
         expect(finputValues[0]) 
           .to.eql(inputsTexts.email);
       });
