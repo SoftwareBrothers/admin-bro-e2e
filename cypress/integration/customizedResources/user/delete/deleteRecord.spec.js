@@ -9,8 +9,8 @@ import {
   
 const { boardView, buttons } = customized;
   
-describe('Delete user record',function(){
-  it('From record details page and clicking remove button',function(){
+describe('Delete user record', function () {
+  it('From record details page and clicking remove button', function () {
     cy.loginSuccess() 
       .get(leftNavbar.customized.user).contains(navbarTexts.customized.user).click()
       .get(boardView.table).then($tableWithRecords=>{
@@ -19,9 +19,9 @@ describe('Delete user record',function(){
       });
     cy.get(boardView.tableTds).first().find('a').click()
       .get(buttons.remove).click()
-      .get(boardView.table).then($tableWithRecords=>{ 
+      .get(boardView.table).then($tableWithRecords => { 
         const firstRecordIdAfeterDelete = $tableWithRecords.find(boardView.tableTds).eq(1).text();
-        expect(this.firstRecordId.text()).not.to.equal(firstRecordIdAfeterDelete);
+        expect(this.firstRecordId.text()).not.to.eql(firstRecordIdAfeterDelete);
       });
   });
 }); 

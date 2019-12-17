@@ -7,7 +7,7 @@ describe('go to places', function() {
     cy.wait(1000);
   });
   it('find created place and remove it', function () {
-    cy.get('.label').contains('Name').next().then(function($name) {
+    cy.get('.label').contains(common.name).next().then(function($name) {
       cy.wrap($name.text()).as('placeName');
     });
     cy.get('li').contains('FavouritePlaces').click()
