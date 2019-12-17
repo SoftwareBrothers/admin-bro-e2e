@@ -7,10 +7,11 @@ describe('go to places', function() {
     cy.wait(1000);
   });
   it('find created place and remove it', function () {
-    cy.get('.label').contains('Name').next().then(function($name) {
+    cy.get('.label').contains(common.buttons.name).next().then(function($name) {
       cy.wrap($name.text()).as('placeName');
     });
-    cy.get('.lpntyS').contains('FavouritePlaces').click()
+    cy.get('li').contains('FavouritePlaces').click()
+      .wait(700)
       .sortBy('Created At')
       .wait(700)
       .sortBy('Created At').then(()=>{
