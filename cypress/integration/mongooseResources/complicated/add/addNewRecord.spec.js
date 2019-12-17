@@ -31,10 +31,10 @@ describe('Add record to the complicated', () => {
         expect(name.text()).to.be.eql(inputsTexts.name);
         // extracting texts from spans inside td which contains all info typed above 
         const info = getTextFromChildElements($tr.find(
-          boardView.tableTdClass).eq(4),'span', [0,1,2,3,4]);
+          boardView.tableTdClass).eq(4),'span', [0,1,2,3]);
         expect(info)   
           .to.include.members([
-            inputsTexts.personAge, 
+            inputsTexts.personAge,  
             inputsTexts.height,
             inputsTexts.birthPlace, 
             inputsTexts.extremlyNested,             
