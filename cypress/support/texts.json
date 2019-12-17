@@ -4,31 +4,42 @@
       "category": "Category",
       "comment": "Comment",
       "complicated": "Complicated"
+    },
+    "customized": {
+      "user": "User (custom actions example)",
+      "page": "Page (with WYSIWIG)"
+
     }
   },
   "common": {
     "buttons": {
       "addNew": "Add new",
-      "remove": "Remove"
-
+      "remove": "Remove",
+      "name": "Name"
     },
     "errorMsg": {
       "titleField": "Path `title` is required.",
-      "validationDiv": "There were errors in the record object. Check them out"
+      "validationDiv": "There are validation errors - check them out below.",
+      "emailField": "Path `email` is required.",
+      "authPasswordField": "Path `auth.password` is required."
     },
     "inputsTexts": {
       "randomNumbers": "123533456789",
       "ownerRandom": "random owner",
-      "title": "Aaaaaarons age",
+      "title": "Aabrons",
       "nestedValue": "50400",
       "nestedField": "10-900 arnold",
-      "name": "Aadminator",
-      "personAge": "3",
-      "height": "176",
+      "name": "Adminator",
+      "personAge": 3,
+      "height": 176,
       "birthPlace": "Wroclaw",
-      "extremlyNested": "I am nested as hell"
+      "extremlyNested": "I am nested as hell",
+      "email": "aatest@wp.pl",
+      "password": "password123"
     },
     "save": "Save",
-    "randomText": "something"
+    "randomText": "something",
+    "recordCreated": "Successfully created a new record",
+    "recordDeleted": "Successfully removed given record"
   }
 }

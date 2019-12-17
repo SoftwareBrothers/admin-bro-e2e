@@ -26,6 +26,7 @@ describe('Editing first comment record on the list',function(){
         cy.wrap($tr.find(boardView.tableTdClass).eq(0)).as('idNumber');
       });
     cy.get(boardView.tableTds).eq(3).find('a').click()
+      .wait(1000)
       .get(buttons.edit).click() 
       .get(buttons.dropDownButton).click()
       .get(buttons.dropDownOptionsClass).then($elements=>{
@@ -43,6 +44,6 @@ describe('Editing first comment record on the list',function(){
         // checking does any value from arrays is common
         expect(intersection(formValues,changedFormValues )).to.be.empty;
         expect(idNumberChanged.text()).to.be.equal(this.idNumber.text()); 
-      });      
-  });   
-}); 
+      });
+  });
+});
