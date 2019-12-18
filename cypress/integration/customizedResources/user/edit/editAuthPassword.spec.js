@@ -1,3 +1,4 @@
+import faker from 'faker'
 import {
   customized,
   leftNavbar,
@@ -8,7 +9,7 @@ import {
 } from '../../../../support/texts';
   
 const { inputs, buttons, boardView } = customized;
-const editedPassword = 'editedPasswor3d2k';
+const editedPassword = faker.lorem.words();
   
 describe('Editing email in first record on the list',function(){
   it('Check does changed fields in records are applied on main page', function(){
@@ -24,9 +25,7 @@ describe('Editing email in first record on the list',function(){
       .wait(500)
       .get(buttons.edit).click()
       .get(inputs.authPassword).invoke('val').then(text=>{
-        expect(this.authPassword).to.deep.not.eq(text);
+        expect(this.authPassword).to.not.eql(text);
       });
   });
 });
-
-  

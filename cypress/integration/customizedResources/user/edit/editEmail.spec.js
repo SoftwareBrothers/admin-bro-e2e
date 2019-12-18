@@ -1,3 +1,4 @@
+import faker from 'faker'
 import {
   customized,
   leftNavbar,
@@ -10,15 +11,14 @@ import {
 import { getFormValues } from '../../../../support/helpersMethods';
   
 const { inputs, buttons, boardView } = customized;
-const editEmail = 'aaaaeditemail@wp.pl';
+const editEmail = 'aaaa' + faker.internet.email();
   
 describe('Editing email in first record on the list',function(){
   it('Check does changed fields in records are applied on main page', function(){
-    let formValues;
     cy.loginSuccess() 
       .get(leftNavbar.customized.user).contains(navbarTexts.customized.user).click()
-      .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
-        formValues = getFormValues($tr, [0]);
+      .get(boardView.table).find(boardView.tableTr).eq(1).find(boardView.tableTds).eq(0).then($td=>{
+        cy.wrap($td).as('firstEmail');
       })
       .get(boardView.tableTds).first().find('a').click()
       .get(buttons.edit).click()
@@ -27,8 +27,8 @@ describe('Editing email in first record on the list',function(){
       .wait(500)
       .get(buttons.back).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
-        const formValuesChanged = getFormValues($tr, [0]);
-        expect(formValues).to.deep.not.eq(formValuesChanged);  
+        const editedEmail = getFormValues($tr, [0]);
+        expect(this.firstEmail.text()).to.deep.not.eq(editedEmail);  
       });
   });  
 }); 
