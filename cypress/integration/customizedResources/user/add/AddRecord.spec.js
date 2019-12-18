@@ -14,7 +14,6 @@ import { getFormValues,
 const { inputs, buttons, boardView } = customized;
 
 let email = 'aaaaa' + faker.internet.email().toLowerCase();
-//let lowerEmail = email.toLowerCase();
 
 describe('Add record to the user (custom actions example)', function() {
   it('Go to user and add record', function() {
