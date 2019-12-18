@@ -19,5 +19,8 @@
   "[typescript]": {
     "editor.formatOnSave": false
   },
-  "eslint.run": "onSave"
+  "eslint.run": "onSave",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

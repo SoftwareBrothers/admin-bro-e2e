@@ -13,8 +13,8 @@ import { getTextFromChildElements,
 const { inputs, calendar, buttons, boardView } = mongoose;
 const { inputsTexts  } = common;
 
-describe('Add record to the complicated', () => {
-  it('Create record with basic info only', () => {
+describe('Add record to the complicated', function(){
+  it('Create record with basic info only', function(){
     cy.loginSuccess()
       .get(leftNavbar.mongoose.complicated).contains(navbarTexts.mongoose.complicated).click()
       .get(buttons.addIcon).click()

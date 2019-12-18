@@ -13,8 +13,8 @@ import { getFormValues,
 const { inputs, calendar, buttons, boardView } = mongoose;
 const { inputsTexts  } = common;
 
-describe('Add record to the category', () => {
-  it('Go to category and add record', () => {
+describe('Add record to the category',function(){
+  it('Go to category and add record', function(){
     cy.loginSuccess()
       .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
       .get(buttons.addIcon).click()

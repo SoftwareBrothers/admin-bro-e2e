@@ -1,17 +1,10 @@
 import faker from 'faker';
-import {
-  mongoose,
-  leftNavbar,
-} from '../../../../support/cssCommonSelectors';
-import {
-  common,
-  navbarTexts,
-} from '../../../../support/texts';
-
+import { leftNavbar, mongoose } from '../../../../support/cssCommonSelectors';
 import { getFormValues } from '../../../../support/helpersMethods';
+import { common, navbarTexts } from '../../../../support/texts';
+
 
 const { inputs, calendar, buttons, boardView } = mongoose;
-const { inputsTexts } = common;
 
 describe('Editing first record on the list',function(){
   it('Check does changed fields in records are applied on main page', function(){
@@ -41,7 +34,7 @@ describe('Editing first record on the list',function(){
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
         // numbers here represents indexes of tdsfrom first tr, with title etc
         const formValuesChanged = getFormValues($tr, [0,2,3,4,5]);
-        expect(formValues).to.deep.not.eq(formValuesChanged);  
+        expect(formValues).to.not.eql(formValuesChanged);  
       });
   });  
 }); 

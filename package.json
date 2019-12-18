@@ -4,6 +4,7 @@
   "description": "Cypress e2e tests for Admin-Bro",
   "main": "index.js",
   "dependencies": {
+    "@types/faker": "^4.1.8",
     "Faker": "^0.7.2",
     "lodash": "^4.17.15"
   },
