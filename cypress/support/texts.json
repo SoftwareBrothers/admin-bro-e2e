@@ -13,7 +13,8 @@
   "common": {
     "buttons": {
       "addNew": "Add new",
-      "remove": "Remove"
+      "remove": "Remove",
+      "name": "Name"
     },
     "errorMsg": {
       "titleField": "Path `title` is required.",
@@ -36,7 +37,7 @@
     },
     "save": "Save",
     "randomText": "something",
-    "recordCreated": "Record has been successfully created!",
-    "recordDeleted": "action delete has been successfully performed"
+    "recordCreated": "Successfully created a new record",
+    "recordDeleted": "Successfully removed given record"
   }
 }

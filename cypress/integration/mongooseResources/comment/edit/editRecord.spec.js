@@ -46,6 +46,6 @@ describe('Editing first comment record on the list',function(){
         // checking does any value from arrays is common
         expect(intersection(formValues,changedFormValues )).to.be.empty;
         expect(idNumberChanged.text()).to.be.equal(this.idNumber.text()); 
-      });      
-  });    
-}); 
+      });
+  });
+});

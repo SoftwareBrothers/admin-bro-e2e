@@ -1,4 +1,4 @@
-import faker from 'faker'
+import faker from 'faker';
 import {
   customized,
   leftNavbar,
@@ -9,10 +9,10 @@ import {
 } from '../../../../support/texts';
   
 const { inputs, buttons, boardView } = customized;
-const editedPassword = faker.lorem.words();
+const editedPassword = faker.lorem.words(2);
   
-describe('Editing email in first record on the list',function(){
-  it('Check does changed fields in records are applied on main page', function(){
+describe('Editing email in first record on the list', function () {
+  it('Check does changed fields in records are applied on main page', function () {
     cy.loginSuccess() 
       .get(leftNavbar.customized.user).contains(navbarTexts.customized.user).click()
       .get(boardView.tableTds).first().find('a').click()
