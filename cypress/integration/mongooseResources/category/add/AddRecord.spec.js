@@ -12,7 +12,7 @@ import { getFormValues,
 import faker from 'faker';
 
 const { inputs, calendar, buttons, boardView } = mongoose;
-const title = 'AA'+faker.name.firstName(); 
+const title = ' '+faker.name.firstName(); 
 const nestedVal = faker.random.number()+'';
 const owner = faker.random.word();
 const nestedField = faker.random.word(); 
@@ -33,13 +33,12 @@ describe('Add record to the category',function(){
       .get(buttons.back).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{ 
         const finputValues = getFormValues($tr, [0,2,3,4]);
-        expect(finputValues) 
-          .to.have.members([
-            title,
-            nestedVal,
-            owner,
-            nestedField,
-          ]);
+        expect(finputValues).to.have.members([
+          title,
+          nestedVal,
+          owner,
+          nestedField,
+        ]);
       });
   }); 
 });

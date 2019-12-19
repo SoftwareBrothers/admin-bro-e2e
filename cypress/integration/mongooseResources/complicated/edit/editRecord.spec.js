@@ -8,7 +8,7 @@ const { inputs, buttons, boardView } = mongoose;
 
 describe('Edit record on complicated section', function(){
   it('Check does changed fields in records are applied on main page', function(){
-    const editedTitle = faker.name.firstName(); 
+    const editedTitle =' ' + faker.name.firstName(); 
     const age = faker.random.number();
     const editedExtremlyNestedValue = faker.random.word();
     const editedBirthPlace = faker.address.city();
@@ -28,7 +28,7 @@ describe('Edit record on complicated section', function(){
       .get(boardView.tableTds).first().find('a').click()
       .get(buttons.edit).click() 
       // adding double 'a' to be sure it will be first on the list
-      .get(inputs.name).clear().type('Aa'+editedTitle) 
+      .get(inputs.name).clear().type(editedTitle) 
       .get(inputs.personAge).clear().type(age)
       .get(inputs.height).clear().type(editedHeight)
       .get(inputs.birthPlace).clear().type(editedBirthPlace)

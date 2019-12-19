@@ -14,7 +14,6 @@ import faker from 'faker';
 import { getFormValues } from '../../../../support/helpersMethods';
 
 const { inputs, buttons, boardView } = mongoose;
-const { inputsTexts } = common;
 const contentNumbers = faker.random.number()+''; 
 
 describe('Editing first comment record on the list',function(){
