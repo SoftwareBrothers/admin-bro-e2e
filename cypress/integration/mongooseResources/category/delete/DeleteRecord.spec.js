@@ -1,12 +1,5 @@
-import {
-  mongoose,
-  leftNavbar,
-} from '../../../../support/cssCommonSelectors';
-import {
-  common,
-  navbarTexts,
-} from '../../../../support/texts';
-import { clearScreenDown } from 'readline';
+import { leftNavbar, mongoose } from '../../../../support/cssCommonSelectors';
+import { navbarTexts } from '../../../../support/texts';
 
 const { boardView, buttons } = mongoose;
 
@@ -22,7 +15,7 @@ describe('Delete category record',function(){
       .get(buttons.remove).click()
       .get(boardView.table).then($tableWithRecords=>{ 
         const firstRecordIdAfeterDelete = $tableWithRecords.find(boardView.tableTds).eq(1).text();
-        expect(this.firstRecordId.text()).not.to.equal(firstRecordIdAfeterDelete);
+        expect(this.firstRecordId.text()).not.to.eql(firstRecordIdAfeterDelete);
       });
   });
-}); 
+});  

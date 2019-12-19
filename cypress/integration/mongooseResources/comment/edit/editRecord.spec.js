@@ -9,11 +9,13 @@ import {
 import{
   intersection,
 } from 'lodash';
+import faker from 'faker';
 
 import { getFormValues } from '../../../../support/helpersMethods';
 
 const { inputs, buttons, boardView } = mongoose;
 const { inputsTexts } = common;
+const contentNumbers = faker.random.number()+''; 
 
 describe('Editing first comment record on the list',function(){
   it('Check does changed fields in records are applied on main page', function(){
@@ -21,19 +23,19 @@ describe('Editing first comment record on the list',function(){
     cy.loginSuccess() 
       .get(leftNavbar.mongoose.comment).contains(navbarTexts.mongoose.comment).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
-        // numbers here represents indexes of tdsfrom first tr, with title etc
+        // numbers here represents indexes of tds from first tr, with title etc
         formValues = getFormValues($tr, [1,2,3]);
         cy.wrap($tr.find(boardView.tableTdClass).eq(0)).as('idNumber');
-      });
-    cy.get(boardView.tableTds).eq(3).find('a').click()
+      })
+      .get(boardView.tableTds).eq(3).find('a').click()
       .wait(1000)
-      .get(buttons.edit).click() 
+      .get(buttons.edit).click()   
       .get(buttons.dropDownButton).click()
       .get(buttons.dropDownOptionsClass).then($elements=>{
         $elements.not(formValues[0]).first().click();
       });
     cy.get(inputs.checkBoxFlagged).click() 
-      .get(inputs.content).clear().type(inputsTexts.randomNumbers)  
+      .get(inputs.content).clear().type(contentNumbers)  
       .get(buttons.save).contains(common.save).click()
       .wait(1000)
       .get(buttons.back).click() 
@@ -42,8 +44,8 @@ describe('Editing first comment record on the list',function(){
         const idNumberChanged = $tr.find(boardView.tableTdClass).eq(0);
         const changedFormValues = getFormValues($tr, [1,2,3]);
         // checking does any value from arrays is common
-        expect(intersection(formValues,changedFormValues )).to.be.empty;
-        expect(idNumberChanged.text()).to.be.equal(this.idNumber.text()); 
+        expect(intersection(formValues,changedFormValues)).to.be.empty;
+        expect(idNumberChanged.text()).to.be.eql(this.idNumber.text()); 
       });
   });
 });
