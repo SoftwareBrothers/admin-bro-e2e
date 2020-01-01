@@ -16,10 +16,10 @@ describe('Delete comment record',function(){
         const idOfFirstRecord = $tableWithRecords.find(boardView.tableTds).eq(0);
         cy.wrap(idOfFirstRecord).as('firstRecordId');
       });
-    cy.get(boardView.tableTds).eq(3).find('a').click()
+    cy.get(boardView.tableFirstDataRow).eq(2).find('a').click()
       .get(buttons.remove).click()
       .get(boardView.table).then($tableWithRecords=>{ 
-        const firstRecordIdAfeterDelete = $tableWithRecords.find(boardView.tableTds).eq(0).text();
+        const firstRecordIdAfeterDelete = $tableWithRecords.find(boardView.tableFirstDataRow).eq(1).text();
         expect(this.firstRecordId.text()).not.to.equal(firstRecordIdAfeterDelete);
       });
   });

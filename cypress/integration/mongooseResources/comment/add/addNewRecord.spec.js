@@ -12,7 +12,6 @@ const { inputsTexts } = common;
 
 describe('Adding new record to comment', function(){
   it('New comment by click on add new button', function() {
-
     cy.loginSuccess() 
       .get(leftNavbar.mongoose.comment).contains(navbarTexts.mongoose.comment).click()
       .get(buttons.addIcon).click()
@@ -27,16 +26,15 @@ describe('Adding new record to comment', function(){
       .get(buttons.save).contains(common.save).click()
       .wait(1000)
       .get(buttons.back).click() 
-      .get(sorting.sortByIdButton).click() 
       .wait(1000)
       .get(boardView.table).then($tableWithRecords=>{ 
-        const categoryObBoard = $tableWithRecords.find(boardView.tableTdClass).eq(1).text();
-        const flaggedOnBoard = $tableWithRecords.find(boardView.tableTdClass).eq(2).text();
-        const contentOnBoard = $tableWithRecords.find(boardView.tableTdClass).eq(3).text();
+        const categoryOnBoard = $tableWithRecords.find(boardView.tableFirstDataRow).eq(4).text();
+        const flaggedOnBoard = $tableWithRecords.find(boardView.tableFirstDataRow).eq(3).text();
+        const contentOnBoard = $tableWithRecords.find(boardView.tableFirstDataRow).eq(2).text();
   
-        expect(this.category).to.be.equal(categoryObBoard);
-        expect(flaggedOnBoard).to.be.equal('Yes');
-        expect(contentOnBoard).to.be.equal(inputsTexts.randomNumbers);
+        expect(this.category).to.equal(categoryOnBoard);
+        expect(flaggedOnBoard).to.equal('Yes');
+        expect(contentOnBoard).to.equal(inputsTexts.randomNumbers);
       });
   });
 });

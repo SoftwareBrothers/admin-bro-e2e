@@ -1,44 +1,42 @@
 
-import {
-  mongoose,
-  leftNavbar,
-} from '../../../../support/cssCommonSelectors';
-import {
-  common,
-  navbarTexts,
-} from '../../../../support/texts';
-import { getTextFromChildElements,
-} from '../../../../support/helpersMethods';
+import faker from 'faker'
 
-const { inputs, calendar, buttons, boardView } = mongoose;
-const { inputsTexts  } = common;
+import { mongoose } from '../../../../support/cssCommonSelectors';
+import { common } from '../../../../support/texts';
+
+const { inputs, buttons} = mongoose;
 
 describe('Add record to the complicated', () => {
   it('Create record with basic info only', () => {
+    const newComplicated = {
+      name: faker.name.firstName('male'),
+      personAge: 18,
+      height: 82,
+      birthPlace: faker.address.city(),
+      extremlyNested: 11,
+    }
+
     cy.loginSuccess()
-      .get(leftNavbar.mongoose.complicated).contains(navbarTexts.mongoose.complicated).click()
+      .clickResourceOnSidebar('Complicated')
       .get(buttons.addIcon).click()
-      .get(inputs.name).type(inputsTexts.name) 
-      .get(inputs.personAge).type(inputsTexts.personAge)
-      .get(inputs.height).type(inputsTexts.height)
-      .get(inputs.birthPlace).type(inputsTexts.birthPlace)
-      .get(inputs.extremlyNested).type(inputsTexts.extremlyNested)
+      .get(inputs.name).type(newComplicated.name) 
+      .get(inputs.personAge).type(newComplicated.personAge)
+      .get(inputs.height).type(newComplicated.height)
+      .get(inputs.birthPlace).type(newComplicated.birthPlace)
+      .get(inputs.extremlyNested).type(newComplicated.extremlyNested)
       .get(buttons.save).contains(common.save).click()
       .wait(1000)
       .get(buttons.back).click()
-      .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{ 
-        const name = $tr.find(boardView.tableTdClass).eq(0);
-        expect(name.text()).to.be.eql(inputsTexts.name);
-        // extracting texts from spans inside td which contains all info typed above 
-        const info = getTextFromChildElements($tr.find(
-          boardView.tableTdClass).eq(4),'span', [0,1,2,3]);
-        expect(info)   
-          .to.include.members([
-            inputsTexts.personAge,  
-            inputsTexts.height,
-            inputsTexts.birthPlace, 
-            inputsTexts.extremlyNested,             
-          ]); 
-      });
+      .getTableRow(1, (formValues => {
+        expect(formValues.Name).to.equal(newComplicated.name)
+        expect(formValues['Nested Details']['Person age: ']).to.equal(
+          newComplicated.personAge.toString())
+        expect(formValues['Nested Details']['Height: ']).to.equal(
+          newComplicated.height.toString())
+        expect(formValues['Nested Details']['Place Of Birth: ']).to.equal(
+          newComplicated.birthPlace)
+        expect(formValues['Nested Details']['Nested: This nesting is crazy: ']).to.equal(
+          newComplicated.extremlyNested.toString())
+      }))
   }); 
 });

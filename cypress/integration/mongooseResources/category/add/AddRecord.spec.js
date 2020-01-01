@@ -22,13 +22,11 @@ describe('Add record to the category', () => {
       .get(inputs.nestedValue).type(inputsTexts.randomNumbers)
       .get(inputs.nestedFiled).type(common.randomText)
       .get(inputs.owner).type(inputsTexts.ownerRandom)
-      .get(inputs.createdAt).click()
-      .get(calendar.openCalendar).find(calendar.today).click()
       .get(buttons.save).contains(common.save).click()
       .wait(1000)
       .get(buttons.back).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{ 
-        const finputValues = getFormValues($tr, [0,2,3,4]);
+        const finputValues = getFormValues($tr, [1,4,5,6]);
         expect(finputValues) 
           .to.have.members([
             inputsTexts.randomNumbers, 

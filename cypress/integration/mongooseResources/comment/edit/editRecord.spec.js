@@ -1,49 +1,40 @@
-import {
-  mongoose,
-  leftNavbar,
-} from '../../../../support/cssCommonSelectors';
-import {
-  common,
-  navbarTexts,
-} from '../../../../support/texts';
-import{
-  intersection,
-} from 'lodash';
+import faker from 'faker'
 
-import { getFormValues } from '../../../../support/helpersMethods';
+import { mongoose } from '../../../../support/cssCommonSelectors';
 
-const { inputs, buttons, boardView } = mongoose;
-const { inputsTexts } = common;
+const { buttons } = mongoose;
+
+const CATEGORY_DROPDOWN_SELLECTOR = 'form .control > div > div'
+const CATEGORY_DROPDOWN_LIST_SELECTOR = 'form .control > div:last-child > div:last-child > div > div'
 
 describe('Editing first comment record on the list',function(){
   it('Check does changed fields in records are applied on main page', function(){
     let formValues;
-    cy.loginSuccess() 
-      .get(leftNavbar.mongoose.comment).contains(navbarTexts.mongoose.comment).click()
-      .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
-        // numbers here represents indexes of tdsfrom first tr, with title etc
-        formValues = getFormValues($tr, [1,2,3]);
-        cy.wrap($tr.find(boardView.tableTdClass).eq(0)).as('idNumber');
-      });
-    cy.get(boardView.tableTds).eq(3).find('a').click()
-      .wait(1000)
-      .get(buttons.edit).click() 
-      .get(buttons.dropDownButton).click()
-      .get(buttons.dropDownOptionsClass).then($elements=>{
-        $elements.not(formValues[0]).first().click();
-      });
-    cy.get(inputs.checkBoxFlagged).click() 
-      .get(inputs.content).clear().type(inputsTexts.randomNumbers)  
-      .get(buttons.save).contains(common.save).click()
+    let newCategory
+
+    const newContent = faker.lorem.words(10)
+
+    cy.loginSuccess()
+      .clickResourceOnSidebar('Comment')
+      .getTableRow(1, (tableRowObject => {
+        formValues = tableRowObject
+        formValues.actions.Edit.click()
+      }))
+      .get('form #content').clear().type(newContent)
+      .get(CATEGORY_DROPDOWN_SELLECTOR).click()
+      .get(CATEGORY_DROPDOWN_LIST_SELECTOR).then($elements => {
+        newCategory = $elements.first().text()
+        $elements.first().click()
+      })
+      .get('form #flagged').click()
+      .get(buttons.save).click()
       .wait(1000)
       .get(buttons.back).click() 
-      .get(boardView.table).should('be.visible').find(boardView.tableTr).eq(1).then($tr=>{
-        // numbers here represents indexes of tdsfrom first tr, with title etc
-        const idNumberChanged = $tr.find(boardView.tableTdClass).eq(0);
-        const changedFormValues = getFormValues($tr, [1,2,3]);
-        // checking does any value from arrays is common
-        expect(intersection(formValues,changedFormValues )).to.be.empty;
-        expect(idNumberChanged.text()).to.be.equal(this.idNumber.text()); 
-      });
+      .getTableRow(1, (newFormValues => {
+        expect(newFormValues.Content).to.equal(newContent)
+        expect(newFormValues.Id).to.equal(formValues.Id)
+        expect(newFormValues.Flagged).not.to.equal(formValues.Flagged)
+        expect(newFormValues.Category).to.equal(newCategory)
+      }))
   });
 });
