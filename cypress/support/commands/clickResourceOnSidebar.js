@@ -3,8 +3,8 @@
  * 
  * @param {string} resourceId         unique id of a resource which is in the action URL
  */
-const clickResourceOnSidebar = (resourceId) => {
-  return cy.get(`a[href="/admin/resources/${resourceId}/actions/list"]`).click()
-}
+const clickResourceOnSidebar = resourceId => {
+  return cy.get(`#app aside a[href="/admin/resources/${resourceId}/actions/list"]`).click();
+};
 
-Cypress.Commands.add('clickResourceOnSidebar', clickResourceOnSidebar)
+Cypress.Commands.add('clickResourceOnSidebar', clickResourceOnSidebar);

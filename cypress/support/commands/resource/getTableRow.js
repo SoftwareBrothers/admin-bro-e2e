@@ -20,30 +20,30 @@ const getTableRow = (rowNumber = 1, callback) => {
           return Cypress.$(el).find('> div').toArray().reduce((memo, div) => ({
             ...memo,
             [Cypress.$(div).find('label').text()]: Cypress.$(div).find('span').text(),
-          }), {})
+          }), {});
         }
-        return el.textContent
-      })
-    const columns = $table.find(`thead tr > th`)
-      .map((index, el) => el.textContent)
+        return el.textContent;
+      });
+    const columns = $table.find('thead tr > th')
+      .map((index, el) => el.textContent);
 
     // manually assign the value for first and last columns
-    columns[0] = 'checkbox'
-    columns[columns.length - 1] = 'actions'
+    columns[0] = 'checkbox';
+    columns[columns.length - 1] = 'actions';
 
     const tableRowObject = columns.toArray().reduce((memo, column, index) => ({
-      ...memo, [column]: rows[index]
-    }), {})
+      ...memo, [column]: rows[index],
+    }), {});
 
     // actions contain regular links instead of texts
     tableRowObject['actions'] = $table.find(
-      `tbody tr:nth-child(${rowNumber}) > td:last-child .dropdown-content a`
+      `tbody tr:nth-child(${rowNumber}) > td:last-child .dropdown-content a`,
     ).toArray().reduce((memo, el) => ({
       ...memo, [el.textContent]: el,
-    }), {})
+    }), {});
     
-    callback(tableRowObject)
-  })
-}
+    callback(tableRowObject);
+  });
+};
 
-Cypress.Commands.add('getTableRow', getTableRow)
+Cypress.Commands.add('getTableRow', getTableRow);

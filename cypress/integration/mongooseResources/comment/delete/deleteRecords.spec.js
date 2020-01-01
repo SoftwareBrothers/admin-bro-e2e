@@ -18,8 +18,9 @@ describe('Delete comment record',function(){
       });
     cy.get(boardView.tableFirstDataRow).eq(2).find('a').click()
       .get(buttons.remove).click()
-      .get(boardView.table).then($tableWithRecords=>{ 
-        const firstRecordIdAfeterDelete = $tableWithRecords.find(boardView.tableFirstDataRow).eq(1).text();
+      .get(boardView.table).then($tableWithRecords => { 
+        const firstRecordIdAfeterDelete = $tableWithRecords.find(
+          boardView.tableFirstDataRow).eq(1).text();
         expect(this.firstRecordId.text()).not.to.equal(firstRecordIdAfeterDelete);
       });
   });

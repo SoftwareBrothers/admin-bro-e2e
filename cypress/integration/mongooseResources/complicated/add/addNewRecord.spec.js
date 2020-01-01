@@ -1,10 +1,10 @@
 
-import faker from 'faker'
+import faker from 'faker';
 
 import { mongoose } from '../../../../support/cssCommonSelectors';
 import { common } from '../../../../support/texts';
 
-const { inputs, buttons} = mongoose;
+const { inputs, buttons } = mongoose;
 
 describe('Add record to the complicated', () => {
   it('Create record with basic info only', () => {
@@ -14,7 +14,7 @@ describe('Add record to the complicated', () => {
       height: 82,
       birthPlace: faker.address.city(),
       extremlyNested: 11,
-    }
+    };
 
     cy.loginSuccess()
       .clickResourceOnSidebar('Complicated')
@@ -28,15 +28,15 @@ describe('Add record to the complicated', () => {
       .wait(1000)
       .get(buttons.back).click()
       .getTableRow(1, (formValues => {
-        expect(formValues.Name).to.equal(newComplicated.name)
+        expect(formValues.Name).to.equal(newComplicated.name);
         expect(formValues['Nested Details']['Person age: ']).to.equal(
-          newComplicated.personAge.toString())
+          newComplicated.personAge.toString());
         expect(formValues['Nested Details']['Height: ']).to.equal(
-          newComplicated.height.toString())
+          newComplicated.height.toString());
         expect(formValues['Nested Details']['Place Of Birth: ']).to.equal(
-          newComplicated.birthPlace)
+          newComplicated.birthPlace);
         expect(formValues['Nested Details']['Nested: This nesting is crazy: ']).to.equal(
-          newComplicated.extremlyNested.toString())
-      }))
+          newComplicated.extremlyNested.toString());
+      }));
   }); 
 });
