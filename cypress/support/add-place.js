@@ -10,7 +10,7 @@ function addPlace(){
     .get(sequelize.buttons.dropDownButton).click()
     .get(sequelize.buttons.dropDownOptionsClass).first().click()
     .get(sequelize.inputs.publishedAt).click()
-    .get('.today').eq(6).click()
+    .get('.today').last().click()
     .get(sequelize.buttons.save).click();
 }
 
