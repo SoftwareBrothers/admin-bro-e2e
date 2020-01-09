@@ -4,7 +4,7 @@ import { mongoose } from '../../../../support/cssCommonSelectors';
 
 const { buttons } = mongoose;
 
-const DROPDOWN_SELLECTOR = 'form .control > div > div';
+const DROPDOWN_SELECTOR = 'form .control > div > div';
 const DROPDOWN_LIST_SELECTOR = 'form .control > div:last-child > div:last-child > div > div';
 
 describe('Editing first comment record on the list',function(){
