@@ -21,7 +21,7 @@ describe('Editing first comment record on the list',function(){
         formValues.actions.Edit.click();
       }))
       .get('form #content').clear().type(newContent)
-      .get(DROPDOWN_SELLECTOR).click()
+      .get(DROPDOWN_SELECTOR).click()
       .get(DROPDOWN_LIST_SELECTOR).then($elements => {
         newCategory = $elements.first().text();
         $elements.first().click();
