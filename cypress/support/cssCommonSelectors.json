@@ -14,6 +14,12 @@
       "favouritePlaces": "a[href=\"/admin/resources/FavouritePlaces/actions/list\"]"
     }
   },
+  "propertyTypes": {
+    "reference": {
+      "dropDown": "form .control > div > div",
+      "dropDownList": "form .control > div:last-child > div:last-child > div > div"
+    }
+  },
   "mongoose": {
     "inputs": {
       "nestedValue": "#nested\\.value",

@@ -1,11 +1,8 @@
 import faker from 'faker';
 
-import { mongoose } from '../../../../support/cssCommonSelectors';
+import { mongoose, propertyTypes } from '../../../../support/cssCommonSelectors';
 
 const { buttons } = mongoose;
-
-const DROPDOWN_SELECTOR = 'form .control > div > div';
-const DROPDOWN_LIST_SELECTOR = 'form .control > div:last-child > div:last-child > div > div';
 
 describe('Editing first comment record on the list',function(){
   it('Check does changed fields in records are applied on main page', function(){
@@ -21,8 +18,8 @@ describe('Editing first comment record on the list',function(){
         tableValues.actions.Edit.click();
       }))
       .get('form #content').clear().type(newContent)
-      .get(DROPDOWN_SELECTOR).click()
-      .get(DROPDOWN_LIST_SELECTOR).then($elements => {
+      .get(propertyTypes.reference.dropDown).click()
+      .get(propertyTypes.reference.dropDownList).then($elements => {
         const newCategoryEl = $elements.filter((index, el) => el.textContent !== tableValues.Category)[0]
         newCategory = newCategoryEl.textContent
         Cypress.$(newCategoryEl).click();
