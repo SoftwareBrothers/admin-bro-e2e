@@ -24,7 +24,7 @@ describe('Add record to the user (custom actions example)', function() {
       .wait(1000)
       .get(buttons.back).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{ 
-        const finputValues = getFormValues($tr, [0]);
+        const finputValues = getFormValues($tr, [1]);
         expect(finputValues[0]) 
           .to.eql(inputsTexts.email);
       });

@@ -14,6 +14,12 @@
       "favouritePlaces": "a[href=\"/admin/resources/FavouritePlaces/actions/list\"]"
     }
   },
+  "propertyTypes": {
+    "reference": {
+      "dropDown": "form .control > div > div",
+      "dropDownList": "form .control > div:last-child > div:last-child > div > div"
+    }
+  },
   "mongoose": {
     "inputs": {
       "nestedValue": "#nested\\.value",
@@ -55,6 +61,7 @@
       "tableTr": "tr",
       "tableTds": "td",
       "tableTdClass": ".record-in-list__Td-sc-145opzz-0",
+      "tableFirstDataRow": "tbody tr:first-child > td",
       "sorting": {
         "sortByIdButton": "a[href=\"/?direction=desc&sortBy=_id\"]"
       }
@@ -85,7 +92,6 @@
       "edit": ".icomoon-edit",
       "back": ".icomoon-pagination-left",
       "addIcon": ".icomoon-add",
-      "dropDownButton": ".css-1wy0on6",
       "dropDownOption": "#react-select-4-option-0",
       "dropDownOptionsClass": ".css-1f8bwgw-option"
     }

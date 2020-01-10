@@ -7,10 +7,10 @@ function addPlace(){
     .get(sequelize.buttons.addIcon).click()
     .get(sequelize.inputs.name).type(faker.address.city())
     .get(sequelize.inputs.description).type(faker.lorem.paragraph())
-    .get(sequelize.buttons.dropDownButton).click()
-    .get(sequelize.buttons.dropDownOptionsClass).first().click()
+    .get('form .control > div > div').click()
+    .get('form .control > div:last-child > div:last-child > div > div').first().click()
     .get(sequelize.inputs.publishedAt).click()
-    .get('.today').eq(6).click()
+    .get('.flatpickr-day.today').last().click()
     .get(sequelize.buttons.save).click();
 }
 

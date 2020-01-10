@@ -15,6 +15,8 @@
 
 // Import commands.js using ES2015 syntax:
 import './auth';
+import './commands/clickResourceOnSidebar';
+import './commands/resource/getTableRow';
 import './add-user';
 import './add-place';
 import './sorting';

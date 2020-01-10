@@ -21,27 +21,25 @@ describe('Editing first record on the list',function(){
     let editedNestedField = 'aaa' + faker.random.number(); // to be fixed later
     let editedOwner = 'aaa' + faker.name.lastName(); // to be fixed later
 
-    cy.loginSuccess() 
+    cy.loginSuccess()
       .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
-        // numbers here represents indexes of tdsfrom first tr, with title etc
-        formValues = getFormValues($tr, [0,2,3,4,5]);
+        // numbers here represents indexes of tdsfrom second tr, with title etc
+        formValues = getFormValues($tr, [1,4,5,6]);
       })
-      .get(boardView.tableTds).first().find('a').click()
+      .get(boardView.tableTds).eq(1).find('a').click()
       .get(buttons.edit).click()
       .get(inputs.title).clear().type(editedTitle)
       .get(inputs.nestedValue).clear().type(editedNestedValue)
       .get(inputs.nestedFiled).clear().type(editedNestedField)
       .get(inputs.owner).clear().type(editedOwner)
-      .get(inputs.createdAt).click() 
-      .get(calendar.month).should('not.have.class', 'today').click() 
       .get(buttons.save).contains(common.save).click()
       .wait(3000)
       .get(buttons.back).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
         // numbers here represents indexes of tdsfrom first tr, with title etc
-        const formValuesChanged = getFormValues($tr, [0,2,3,4,5]);
+        const formValuesChanged = getFormValues($tr, [1,4,5,6]);
         expect(formValues).to.deep.not.eq(formValuesChanged);  
       });
   });  
-}); 
+});

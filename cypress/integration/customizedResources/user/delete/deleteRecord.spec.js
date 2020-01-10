@@ -17,7 +17,7 @@ describe('Delete user record', function () {
         const idofFirstRecord = $tableWithRecords.find(boardView.tableTds).eq(1);
         cy.wrap(idofFirstRecord).as('firstRecordId');
       });
-    cy.get(boardView.tableTds).first().find('a').click()
+    cy.get(boardView.tableTds).eq(1).find('a').click()
       .get(buttons.remove).click()
       .get(boardView.table).then($tableWithRecords => { 
         const firstRecordIdAfeterDelete = $tableWithRecords.find(boardView.tableTds).eq(1).text();
