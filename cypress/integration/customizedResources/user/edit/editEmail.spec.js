@@ -11,7 +11,7 @@ import {
 import { getFormValues } from '../../../../support/helpersMethods';
   
 const { inputs, buttons, boardView } = customized;
-const editEmail = 'aaaa' + faker.internet.email();
+const editEmail = 'aaaa' + faker.internet.email().toLowerCase();
   
 describe('Editing email in first record on the list',function(){
   it('Check does changed fields in records are applied on main page', function(){
