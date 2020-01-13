@@ -28,7 +28,7 @@ describe('Editing email in first record on the list',function(){
       .get(buttons.back).click()
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
         const editedEmail = getFormValues($tr, [1]);
-        expect(this.firstEmail.text()).to.deep.not.equal(editedEmail);  
+        expect(this.firstEmail.text()).to.not.eql(editedEmail);  
       });
   });  
 }); 

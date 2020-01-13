@@ -25,7 +25,7 @@ describe('Editing email in first record on the list', function () {
       .wait(500)
       .get(buttons.edit).click()
       .get(inputs.authPassword).invoke('val').then(text=>{
-        expect(this.authPassword).to.not.equal(text);
+        expect(this.authPassword).to.not.eql(text);
       });
   });
 });
