@@ -15,7 +15,7 @@ describe('Editing email in first record on the list', function () {
   it('Check does changed fields in records are applied on main page', function () {
     cy.loginSuccess() 
       .get(leftNavbar.customized.user).contains(navbarTexts.customized.user).click()
-      .get(boardView.tableTds).first().find('a').click()
+      .get(boardView.tableTds).eq(1).find('a').click()
       .get(buttons.edit).click()
       .get(inputs.authPassword).invoke('val').then($text=>{
         cy.wrap($text).as('authPassword');

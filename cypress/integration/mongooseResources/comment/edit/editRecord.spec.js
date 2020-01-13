@@ -1,51 +1,38 @@
-import {
-  mongoose,
-  leftNavbar,
-} from '../../../../support/cssCommonSelectors';
-import {
-  common,
-  navbarTexts,
-} from '../../../../support/texts';
-import{
-  intersection,
-} from 'lodash';
+import faker from 'faker';
 
-import { getFormValues } from '../../../../support/helpersMethods';
+import { mongoose, propertyTypes } from '../../../../support/cssCommonSelectors';
 
-const { inputs, buttons, boardView } = mongoose;
-const { inputsTexts } = common;
+const { buttons } = mongoose;
 
 describe('Editing first comment record on the list',function(){
   it('Check does changed fields in records are applied on main page', function(){
-    let formValues;
-    cy.loginSuccess() 
-      .get(leftNavbar.mongoose.comment).contains(navbarTexts.mongoose.comment).click()
-      .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{
-        // numbers here represents indexes of tdsfrom first tr, with title etc
-        formValues = getFormValues($tr, [1,2,3]);
-        console.log(formValues);
-        cy.wrap($tr.find(boardView.tableTdClass).eq(0)).as('idNumber');
-      });
-    cy.get(boardView.tableTds).eq(3).find('a').click()
-      .wait(1000)
-      .get(buttons.edit).click() 
-      .get(buttons.dropDownButton).click()
-      .get(buttons.dropDownOptionsClass).then($elements=>{
-        console.log(formValues[0]);
-        $elements.not(formValues[0]).first().click();
-      });
-    cy.get(inputs.checkBoxFlagged).click() 
-      .get(inputs.content).clear().type(inputsTexts.randomNumbers)  
-      .get(buttons.save).contains(common.save).click()
+    let tableValues;
+    let newCategory;
+
+    const newContent = faker.lorem.words(10);
+
+    cy.loginSuccess()
+      .clickResourceOnSidebar('Comment')
+      .getTableRow(1, (tableRowObject => {
+        tableValues = tableRowObject;
+        tableValues.actions.Edit.click();
+      }))
+      .get('form #content').clear().type(newContent)
+      .get(propertyTypes.reference.dropDown).click()
+      .get(propertyTypes.reference.dropDownList).then($elements => {
+        const newCategoryEl = $elements.filter((index, el) => el.textContent !== tableValues.Category)[0]
+        newCategory = newCategoryEl.textContent
+        Cypress.$(newCategoryEl).click();
+      })
+      .get('form #flagged').click()
+      .get(buttons.save).click()
       .wait(1000)
       .get(buttons.back).click() 
-      .get(boardView.table).should('be.visible').find(boardView.tableTr).eq(1).then($tr=>{
-        // numbers here represents indexes of tdsfrom first tr, with title etc
-        const idNumberChanged = $tr.find(boardView.tableTdClass).eq(0);
-        const changedFormValues = getFormValues($tr, [1,2,3]);
-        // checking does any value from arrays is common
-        expect(intersection(formValues,changedFormValues )).to.be.empty;
-        expect(idNumberChanged.text()).to.be.equal(this.idNumber.text()); 
-      });
+      .getTableRow(1, (newTableValues => {
+        expect(newTableValues.Id).to.equal(tableValues.Id);
+        expect(newTableValues.Content).to.equal(newContent);
+        expect(newTableValues.Flagged).not.to.equal(tableValues.Flagged);
+        expect(newTableValues.Category).to.equal(newCategory);
+      }));
   });
 });

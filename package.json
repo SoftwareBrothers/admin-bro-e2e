@@ -4,14 +4,13 @@
   "description": "Cypress e2e tests for Admin-Bro",
   "main": "index.js",
   "dependencies": {
-    "@types/faker": "^4.1.8",
-    "Faker": "^0.7.2",
+    "faker": "^4.1.0",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
     "cypress": "^3.7.0",
     "eslint": "^6.6.0",
-    "eslint-plugin-cypress": "^2.7.0",
+    "eslint-plugin-cypress": "^2.8.1",
     "faker": "^4.1.0"
   },
   "scripts": {
