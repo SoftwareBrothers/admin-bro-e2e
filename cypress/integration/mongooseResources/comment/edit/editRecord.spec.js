@@ -20,8 +20,9 @@ describe('Editing first comment record on the list',function(){
       .get('form #content').clear().type(newContent)
       .get(propertyTypes.reference.dropDown).click()
       .get(propertyTypes.reference.dropDownList).then($elements => {
-        const newCategoryEl = $elements.filter((index, el) => el.textContent !== tableValues.Category)[0]
-        newCategory = newCategoryEl.textContent
+        const newCategoryEl = $elements.filter((index, el) => 
+          el.textContent !== tableValues.Category)[0];
+        newCategory = newCategoryEl.textContent;
         Cypress.$(newCategoryEl).click();
       })
       .get('form #flagged').click()
