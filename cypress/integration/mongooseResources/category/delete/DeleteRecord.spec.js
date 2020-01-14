@@ -23,6 +23,8 @@ describe('Delete category record',function(){
       .get(boardView.table).then($tableWithRecords=>{ 
         const firstRecordIdAfeterDelete = $tableWithRecords.find(boardView.tableTds).eq(2).text();
         expect(this.firstRecordId.text()).not.to.equal(firstRecordIdAfeterDelete);
+       
+
       });
   });
 });
