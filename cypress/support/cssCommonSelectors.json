@@ -13,6 +13,7 @@
       "users": "a[href=\"/admin/resources/Users/actions/list\"]",
       "favouritePlaces": "a[href=\"/admin/resources/FavouritePlaces/actions/list\"]"
     }
+
   },
   "propertyTypes": {
     "reference": {
@@ -96,6 +97,7 @@
       "dropDownOptionsClass": ".css-1f8bwgw-option"
     }
   },
+
   "customized": {
     "inputs": {
       "email": "#email",
@@ -104,17 +106,33 @@
       "createdAt": "#createdAt",
       "content": ""
     },
+
     "calendar": {
       "openCalendar": ".open",
       "today": ".today",
       "month": ".open .dayContainer",
       "day": ".flatpickr-day",
       "todayClass": ".open .dayContainer .today"
+
     },
+
+    "buttons": {
+      "save": "button[type = 'submit']",
+      "remove": ".icomoon-remove-2",
+      "edit": ".icomoon-edit",
+      "back": ".icomoon-pagination-left",
+      "addIcon": ".icomoon-add",
+      "dropDownButton": ".css-1wy0on6",
+      "dropDownOption": "#react-select-3-option-0",
+      "dropDownOptionsClass": ".css-1f8bwgw-option"
+
+    },
+
     "validationFields": {
       "validationInput": ".is-danger",
       "validationDiv": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
     },
+
     "boardView": {
       "table": "table",
       "tableTr": "tr",
@@ -124,16 +142,6 @@
       "sorting": {
         "sortByIdButton": "a[href=\"/?direction=desc&sortBy=_id\"]"
       }
-    },
-    "buttons": {
-      "save": "button[type = 'submit']",
-      "remove": ".icomoon-remove-2",
-      "edit": ".icomoon-edit",
-      "back": ".icomoon-pagination-left",
-      "addIcon": ".icomoon-add",
-      "dropDownButton": ".css-1wy0on6",
-      "dropDownOption": "#react-select-4-option-0",
-      "dropDownOptionsClass": ".css-1f8bwgw-option"
     }
   }
 }
