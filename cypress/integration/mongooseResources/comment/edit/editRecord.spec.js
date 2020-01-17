@@ -1,5 +1,4 @@
 import faker from 'faker';
-
 import { mongoose, propertyTypes } from '../../../../support/cssCommonSelectors';
 
 const { buttons } = mongoose;
