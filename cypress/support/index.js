@@ -20,6 +20,7 @@ import './commands/resource/getTableRow';
 import './add-user';
 import './add-place';
 import './sorting';
+import './components';
 
 // Alternatively you can use commonJS syntax:
 // require('./commands')

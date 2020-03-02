@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://admin-bro-example-app.herokuapp.com",
+  "baseUrl": "https://admin-bro-example-app-staging.herokuapp.com",
   "chromeWebSecurity": false,
   "viewportWidth": 1440,
   "viewportHeight": 800

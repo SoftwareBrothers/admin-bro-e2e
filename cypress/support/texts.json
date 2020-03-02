@@ -6,19 +6,22 @@
       "complicated": "Complicated"
     },
     "customized": {
-      "user": "User (custom actions example)",
-      "page": "Page (with WYSIWIG)"
+      "user": "User",
+      "page": "Page",
+      "article": "Article 2"
     }
   },
   "common": {
     "buttons": {
-      "addNew": "Add new",
-      "remove": "Remove",
-      "name": "Name"
+      "addNew": "Create new",
+      "remove": "Delete",
+      "name": "Name",
+      "filter": "Filter",
+      "save": "Save"
     },
     "errorMsg": {
       "titleField": "Path `title` is required.",
-      "validationDiv": "There are validation errors - check them out below.",
+      "validationDiv": "There are validation errors - check them out below",
       "emailField": "Path `email` is required.",
       "authPasswordField": "Path `auth.password` is required."
     },
@@ -38,6 +41,7 @@
     "save": "Save",
     "randomText": "something",
     "recordCreated": "Successfully created a new record",
-    "recordDeleted": "Successfully removed given record"
+    "recordDeleted": "Successfully deleted given record",
+    "authFailed": "Wrong email and/or password"
   }
 }
