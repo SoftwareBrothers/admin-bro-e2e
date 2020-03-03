@@ -3,6 +3,7 @@ const components = {
     email: '[name="email"]',
     password: '[name="password"]',
     messageBox: '[class^=message-box]',
+    sidebarPanel: '[class^=drawer__Drawer]',
     sidebarLink: '[data-testid="sidebar-resource-link"]',
     sidebarDrawer: '[class^=drawer-footer]',
     sidebarPasswordInput: '[type="password"]',
