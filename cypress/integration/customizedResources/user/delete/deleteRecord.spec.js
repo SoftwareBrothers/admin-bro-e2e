@@ -3,7 +3,6 @@ import { customized, leftNavbar } from '../../../../support/cssCommonSelectors';
 import * as texts from '../../../../support/texts';
 import comp from '../../../../support/components';
 
-  
 const { boardView } = customized;
   
 describe('Delete user record', function () {

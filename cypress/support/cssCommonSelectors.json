@@ -23,11 +23,11 @@
   "mongoose": {
     "inputs": {
       "nestedValue": "#nested\\.value",
-      "nestedFiled": "#nested\\.field",
+      "nestedField": "#nested\\.field",
       "owner": "#owner",
       "createdAt": "#createdAt",
       "title": "#title",
-      "checkBoxFlagged": "#flagged",
+      "checkBoxFlagged": "[data-testid=\"property-edit-flagged\"]",
       "content": "#content",
       "name": "#name",
       "personAge": "#nestedDetails\\.age",
@@ -48,7 +48,7 @@
       "edit": ".icomoon-edit",
       "back": ".icomoon-pagination-left",
       "addIcon": ".icomoon-add",
-      "dropDownButton": ".css-1wy0on6",
+      "dropDownButton": ".css-1vcs26a-control > .css-1wy0on6 > .css-16pqwjk-indicatorContainer",
       "dropDownOption": "#react-select-3-option-0",
       "dropDownOptionsClass": ".css-1f8bwgw-option"
     },

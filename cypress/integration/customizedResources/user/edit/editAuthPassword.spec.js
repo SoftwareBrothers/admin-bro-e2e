@@ -3,7 +3,7 @@ import { customized, leftNavbar } from '../../../../support/cssCommonSelectors';
 import { common, navbarTexts } from '../../../../support/texts';
 import comp from '../../../../support/components';
   
-const { inputs, buttons, boardView } = customized;
+const { inputs, boardView } = customized;
 const editedPassword = faker.lorem.words(2);
   
 describe('Editing password in first record on the list', function () {
