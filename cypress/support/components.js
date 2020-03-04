@@ -14,6 +14,12 @@ const components = {
     emailsList: '[data-testid="property-list-email"]',
     idsList: '[data-testid="property-list-_id"]',
   },
+  complicated: {
+    name: '[data-testid="property-list-name"]',
+    birthPlace: '[data-testid="property-list-nestedDetails.placeOfBirth"]',
+    age: '[data-testid="property-list-nestedDetails.age"]',
+    extremelyNested: '[data-testid="property-list-nestedDetails.nested.extremelyNested"]',
+  },
 };
 
 export default components;

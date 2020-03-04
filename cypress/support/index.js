@@ -21,6 +21,7 @@ import './add-user';
 import './add-place';
 import './sorting';
 import './components';
+import './compare-values';
 
 // Alternatively you can use commonJS syntax:
 // require('./commands')

@@ -1,10 +1,10 @@
 
 import faker from 'faker';
-
-import { mongoose } from '../../../../support/cssCommonSelectors';
+import { mongoose, leftNavbar } from '../../../../support/cssCommonSelectors';
 import { common } from '../../../../support/texts';
+import comp from '../../../../support/components';
 
-const { inputs, buttons } = mongoose;
+const { inputs } = mongoose;
 
 describe('Add record to the complicated', () => {
   it('Create record with basic info only', () => {
@@ -15,28 +15,22 @@ describe('Add record to the complicated', () => {
       birthPlace: faker.address.city(),
       extremlyNested: 11,
     };
+    
+    cy.server()
+      .route('POST', '/admin/api/resources/Complicated/actions/new').as('recordSaved');
 
     cy.loginSuccess()
-      .clickResourceOnSidebar('Complicated')
-      .get(buttons.addIcon).click()
+      .get(leftNavbar.mongoose.complicated).click()
+      .get(comp.common.actionButton).contains(common.buttons.addNew).click()
       .get(inputs.name).type(newComplicated.name) 
       .get(inputs.personAge).type(newComplicated.personAge)
       .get(inputs.height).type(newComplicated.height)
       .get(inputs.birthPlace).type(newComplicated.birthPlace)
       .get(inputs.extremlyNested).type(newComplicated.extremlyNested)
-      .get(buttons.save).contains(common.save).click()
-      .wait(1000)
-      .get(buttons.back).click()
-      .getTableRow(1, (formValues => {
-        expect(formValues.Name).to.equal(newComplicated.name);
-        expect(formValues['Nested Details']['Person age: ']).to.equal(
-          newComplicated.personAge.toString());
-        expect(formValues['Nested Details']['Height: ']).to.equal(
-          newComplicated.height.toString());
-        expect(formValues['Nested Details']['Place Of Birth: ']).to.equal(
-          newComplicated.birthPlace);
-        expect(formValues['Nested Details']['Nested: This nesting is crazy: ']).to.equal(
-          newComplicated.extremlyNested.toString());
-      }));
-  }); 
+      .get(comp.common.sidebarDrawer).contains(common.buttons.save).click()
+      .wait('@recordSaved')
+      .compareFirstField(comp.complicated.name, newComplicated.name)
+      .compareFirstField(comp.complicated.birthPlace, newComplicated.birthPlace)
+      .compareFirstField(comp.complicated.extremelyNested, newComplicated.extremlyNested);
+  });
 });
