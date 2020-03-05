@@ -1,9 +1,16 @@
 import { common } from '../../../support/texts';
+import comp from '../../../support/components';
+import faker from 'faker';
 
 describe('Add new user to Sequelize Resources', function () {
   it('Create a new user', function () {
-    cy.addNewUser()
-      .get('.success').should('be.visible')
-      .get('.success').should('contain', common.recordCreated);
+    const userEmail = 'aaaa'+faker.internet.email();
+    const userFirstName = faker.name.firstName();
+    const userLastName = faker.name.lastName();
+
+    cy.addNewUser(userEmail, userLastName, userFirstName)
+      .get(comp.common.messageBox).should('be.visible')
+      .get(comp.common.messageBox).should('contain', common.recordCreated)
+      .get(comp.common.emailsList).should('contain', userEmail);
   });
 });

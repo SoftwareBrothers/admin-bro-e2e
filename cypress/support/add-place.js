@@ -1,17 +1,18 @@
 import faker from 'faker';
-import { sequelize } from './cssCommonSelectors';
+import { leftNavbar, sequelize } from './cssCommonSelectors';
+import comp from './components';
 
-function addPlace(){
+function addPlace(name, description){
   cy.loginSuccess()
-    .get('li').contains('FavouritePlaces').click()
-    .get(sequelize.buttons.addIcon).click()
-    .get(sequelize.inputs.name).type(faker.address.city())
-    .get(sequelize.inputs.description).type(faker.lorem.paragraph())
-    .get('form .control > div > div').click()
-    .get('form .control > div:last-child > div:last-child > div > div').first().click()
-    .get(sequelize.inputs.publishedAt).click()
-    .get('.flatpickr-day.today').last().click()
-    .get(sequelize.buttons.save).click();
+    .get(leftNavbar.sequelize.favouritePlaces).click()
+    .get(comp.common.actionButton).contains('Create new').click()
+    .get(sequelize.inputs.name).type(name)
+    .get(sequelize.inputs.description).type(description)
+    .get('[for="userId"]').next().click()
+    .get(comp.common.dropdownFirstOption).click()
+    .get(comp.common.publishedAt).find('button').click()
+    .get(comp.common.calendarToday).click()
+    .get(comp.common.sidebarDrawer).contains('Save').click({ force: true });
 }
 
 Cypress.Commands.add('addPlace', addPlace);

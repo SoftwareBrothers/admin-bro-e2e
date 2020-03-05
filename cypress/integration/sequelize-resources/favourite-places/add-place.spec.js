@@ -1,9 +1,10 @@
 import { common } from '../../../support/texts';
+import comp from '../../../support/components';
 
-describe('Enters favourite places', () => {
-  it('Should add new record', () => {
+describe('Enters favourite places', function () {
+  it('Should add new record', function () {
     cy.addPlace()
-      .get('.success').should('be.visible')
-      .get('.success').should('contain', common.recordCreated);      
+      .get(comp.common.messageBox).should('be.visible')
+      .get(comp.common.messageBox).should('contain', common.recordCreated);      
   });
 });

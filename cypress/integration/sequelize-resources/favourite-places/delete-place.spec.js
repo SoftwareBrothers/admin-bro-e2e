@@ -1,24 +1,21 @@
-import { sequelize } from '../../../support/cssCommonSelectors';
+import { sequelize, leftNavbar } from '../../../support/cssCommonSelectors';
 import { common } from '../../../support/texts';
+import comp from '../../../support/components';
+import faker from 'faker';
 
-describe('go to places', function() {
-  before(function() {
-    cy.addPlace();
-    cy.wait(1000);
-  });
+describe('go to places', function () {
   it('find created place and remove it', function () {
-    cy.get('.label').contains(common.buttons.name).next().then(function($name) {
-      cy.wrap($name.text()).as('placeName');
-    });
-    cy.get('li').contains('FavouritePlaces').click()
-      .wait(700)
-      .sortBy('Created At')
-      .wait(700)
-      .sortBy('Created At').then(()=>{
-        cy.wait(700)
-          .get('.main').contains(this.placeName).click()
-          .get(sequelize.buttons.remove).click()
-          .get('.success').should('be.visible').should('contain', common.recordDeleted);
-      });
+    const testName = faker.address.city();
+    const testDescription = faker.lorem.paragraph();
+
+    cy.server()
+      .route('GET', '//admin/api/resources/FavouritePlaces/records/*/delete').as('recordDeleted');
+
+    cy.addPlace(testName, testDescription)
+      .get(comp.common.nameList).contains(testName).click()
+      .get(comp.common.actionButton).contains('Delete').click()
+      .wait('@recordDeleted').its('status').should('eql', 200)
+      .get(comp.common.nameList).should('not.contain', testName);
   });
 });
+// });
