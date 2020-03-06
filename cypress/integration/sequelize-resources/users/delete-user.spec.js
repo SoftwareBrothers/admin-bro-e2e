@@ -2,8 +2,8 @@ import { common } from '../../../support/texts';
 import comp from '../../../support/components';
 import faker from 'faker';
 
-describe('Delete added user from Sequelize Resources', function () {
-  it('Enter users, delete created one', function () {
+describe('[Sequelize Resources/ Favourite places] Remove user', function () {
+  it('Should enter users and delete created one', function () {
     const userEmail = 'aaaa'+faker.internet.email();
     const userFirstName = faker.name.firstName();
     const userLastName = faker.name.lastName();

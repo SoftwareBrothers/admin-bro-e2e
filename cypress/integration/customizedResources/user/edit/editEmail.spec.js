@@ -7,7 +7,7 @@ import comp from '../../../../support/components';
 const { inputs, boardView } = customized;
 const editedEmail = 'aaaa' + faker.internet.email().toLowerCase();
   
-describe('Editing password in first record on the list', function () {
+describe('[Customized resources/ User] Editing password in first record on the list', function () {
   it('should check if the password is changed', function () {
     cy.server()
       .route('GET', '/admin/api/resources/User/records/*/show').as('recordLoaded')

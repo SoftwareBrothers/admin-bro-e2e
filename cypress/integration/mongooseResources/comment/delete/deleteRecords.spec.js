@@ -4,8 +4,8 @@ import comp from '../../../../support/components';
 
 const { boardView } = mongoose;
 
-describe('[Mongoose resources - Comment] Delete comment record', function () {
-  it('From record details page and clicking remove button', function () {
+describe('[Mongoose resources/ Comment] Delete comment record', function () {
+  it('Shold delete comment from details page', function () {
     cy.server()
       .route('GET', '/admin/api/resources/Category/search').as('recordLoaded')
       .route('GET', '/admin/api/resources/Comment/records/*/delete').as('recordDeleted');

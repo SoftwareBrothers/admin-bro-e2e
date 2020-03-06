@@ -5,8 +5,8 @@ import comp from '../../../../support/components';
 
 const { inputs, boardView } = mongoose;
 
-describe('Editing first record on the list', function () {
-  it('Check does changed fields in records are applied', function () {
+describe('[Mongoose resources/ Category] Editing first record on the list', function () {
+  it('Should edit fields and check if changes are applied', function () {
     let editedTitle = 'aaa' + faker.name.jobTitle();
     let editedNestedValue = faker.random.number();
     let editedNestedField = 'aaa' + faker.random.number();

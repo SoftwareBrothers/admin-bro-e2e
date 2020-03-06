@@ -5,7 +5,7 @@ import comp from '../../../../support/components';
 
 const { inputs, boardView } = mongoose;
 
-describe('[Moongose resources - Comment] Editing first comment record on the list', function () {
+describe('[Moongose resources/ Comment] Editing first comment record on the list', function () {
   it('should check if changed fields are applied', function () {
     const newContent = faker.lorem.words(10);
     cy.server()

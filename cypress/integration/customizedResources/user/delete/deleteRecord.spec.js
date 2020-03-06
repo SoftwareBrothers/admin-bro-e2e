@@ -5,8 +5,8 @@ import comp from '../../../../support/components';
 
 const { boardView } = customized;
   
-describe('Delete user record', function () {
-  it('From record details page and clicking remove button', function () {
+describe('[Customized resources/ User] Delete user record', function () {
+  it('Should delete a record from details page', function () {
     cy.server()
       .route('GET', '/admin/api/resources/User/records/*/show').as('recordLoaded')
       .route('GET', '/admin/api/resources/User/records/*/delete').as('recordDeleted')

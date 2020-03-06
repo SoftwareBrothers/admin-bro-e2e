@@ -5,15 +5,15 @@ import comp from '../../../../support/components';
 const { inputs, buttons, boardView } = mongoose;
 const { inputsTexts } = common;
 
-describe('Adding new record to comment', function () {
-  it('New comment by click on add new button', function () {
+describe('[Mongoose resources/ Comment]Adding new record to comment', function () {
+  it('Should add a new comment from comments list' , function () {
     cy.server()
       .route('POST', '/admin/api/resources/Comment/actions/new').as('commentAdded');
 
     cy.loginSuccess() 
       .get(leftNavbar.mongoose.comment).contains(navbarTexts.mongoose.comment).click()
       .get(comp.common.actionButton).contains(common.buttons.addNew).click()
-      .get(buttons.dropDownButton).first().click()
+      .get('[for="category"]').next().click()
       .get(buttons.dropDownOption).then($element=>{
         const category = $element.text();
         cy.wrap(category).as('category');

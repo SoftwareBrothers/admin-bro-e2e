@@ -1,10 +1,8 @@
-import { sequelize, leftNavbar } from '../../../support/cssCommonSelectors';
-import { common } from '../../../support/texts';
 import comp from '../../../support/components';
 import faker from 'faker';
 
-describe('go to places', function () {
-  it('find created place and remove it', function () {
+describe('[Sequelize Resources/ Favourite places] Removing records', function () {
+  it('Should find created place and remove it', function () {
     const testName = faker.address.city();
     const testDescription = faker.lorem.paragraph();
 
@@ -18,4 +16,3 @@ describe('go to places', function () {
       .get(comp.common.nameList).should('not.contain', testName);
   });
 });
-// });

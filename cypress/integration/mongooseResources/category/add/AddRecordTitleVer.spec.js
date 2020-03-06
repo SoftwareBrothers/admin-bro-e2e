@@ -5,7 +5,7 @@ import comp from '../../../../support/components';
 const { inputs } = mongoose;
 const { inputsTexts,errorMsg } = common;
 
-describe('Add incorrect filled record to the category', function () {
+describe('[Mongoose resources/ Category] Add incorrect record to the category', function () {
   it('should return error when title field is empty', function () {
     cy.loginSuccess() 
       .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()

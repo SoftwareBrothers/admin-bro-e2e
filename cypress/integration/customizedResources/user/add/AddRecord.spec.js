@@ -7,8 +7,8 @@ import comp from '../../../../support/components';
 const { inputs, boardView } = customized;
 let email = 'aaaaaa' + faker.internet.email().toLowerCase();
 
-describe('Add record to the user (custom actions example)', function() {
-  it('Go to user and add record', function() {
+describe('[Customized resources/ User] Add record to the user', function() {
+  it('Should go to user and add record', function() {
     cy.server()
       .route('POST', '/admin/api/resources/User/actions/new').as('userCreated')
       .route('GET', '/admin/api/resources/User/actions/list').as('listLoaded');

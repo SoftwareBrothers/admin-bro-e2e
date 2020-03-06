@@ -6,8 +6,8 @@ import comp from '../../../../support/components';
 
 const { inputs } = mongoose;
 
-describe('Add record to the complicated', () => {
-  it('Create record with basic info only', () => {
+describe('[Mongoose resources/ Complicated] Add record to the complicated', function () {
+  it('Should create record with basic info only', function () {
     const newComplicated = {
       name: faker.name.firstName('male'),
       personAge: 18,
@@ -29,7 +29,7 @@ describe('Add record to the complicated', () => {
       .get(inputs.extremlyNested).type(newComplicated.extremlyNested)
       .get(comp.common.sidebarDrawer).contains(common.buttons.save).click()
       .wait('@recordSaved')
-      .compareFirstField(comp.complicated.name, newComplicated.name)
+      .compareFirstField(comp.common.nameList, newComplicated.name)
       .compareFirstField(comp.complicated.birthPlace, newComplicated.birthPlace)
       .compareFirstField(comp.complicated.extremelyNested, newComplicated.extremlyNested);
   });

@@ -4,8 +4,8 @@ import comp from '../../../../support/components';
 
 const { boardView } = mongoose;
 
-describe('Delete category record', function () {
-  it('From record details page and clicking remove button',function(){
+describe('[Mongoose resources/ Category] Delete category record', function () {
+  it('Should remove a record from its details page', function () {
     cy.server()
       .route('GET', '/admin/api/resources/Category/records/*/delete').as('recordDeleted')
       .route('GET', '/admin/api/resources/Category/records/*/show').as('recordLoaded')

@@ -4,11 +4,11 @@ import { common, navbarTexts } from '../../../../support/texts';
 import { getFormValues } from '../../../../support/helpersMethods';
 import comp from '../../../../support/components';
 
-const { inputs, calendar, buttons, boardView } = mongoose;
+const { inputs, boardView } = mongoose;
 const { inputsTexts  } = common;
 
-describe('Add record to the category', function () {
-  it('Go to category and add record', function () {
+describe('[Mongoose resources/ Category] Add record to the category', function () {
+  it('Should go to category and add record', function () {
     cy.server()
       .route('POST', '/admin/api/resources/Category/actions/new').as('recordAdded')
       .route('GET', '/admin/api/resources/Category/actions/list').as('listLoaded');
