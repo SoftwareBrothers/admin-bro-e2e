@@ -23,7 +23,6 @@ describe('[Mongoose resources/ Comment]Adding new record to comment', function (
       .get(inputs.checkBoxFlagged).find('#flagged').next().click() 
       .get(comp.common.sidebarDrawer).contains(common.save).click()
       .wait('@commentAdded')
-      // .get(comp.common.hideSidebar).click() 
       .get(boardView.table).then($tableWithRecords=>{ 
         const categoryOnBoard = $tableWithRecords.find(boardView.tableFirstDataRow).eq(4).text();
         const flaggedOnBoard = $tableWithRecords.find(boardView.tableFirstDataRow).eq(3).text();
