@@ -1,6 +1,6 @@
 import faker from 'faker';
 import { customized, leftNavbar } from '../../../../support/cssCommonSelectors';
-import { common, navbarTexts } from '../../../../support/texts';
+import { navbarTexts } from '../../../../support/texts';
 import comp from '../../../../support/components';
   
 const { inputs, boardView } = customized;
@@ -26,7 +26,6 @@ describe('[Customized resources/ User] Editing password in first record on the l
       .get(comp.common.sidebarPanel).should('not.be.visible')
       .get(boardView.tableTr).eq(1).click()
       .wait('@recordEditLoaded')
-      .get(comp.common.sidebarPanel).should('be.visible')
       .get(comp.common.actionButton).contains('Edit').click()
       .get(inputs.authPassword).invoke('val').then(text=>{
         expect(this.authPassword).to.not.eql(text);

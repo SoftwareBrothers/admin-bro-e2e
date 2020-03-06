@@ -20,8 +20,6 @@ describe('[Customized resources/ User] Add record to the user', function() {
       .get(inputs.authPassword).type(faker.lorem.word())
       .get('button').contains(common.save).click()
       .wait('@userCreated')
-      .get(comp.common.hideSidebar).click()
-      .wait('@listLoaded')
       .get(boardView.tableTr).should('contain', email)
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{ 
         const inputValues = getFormValues($tr, [1]);

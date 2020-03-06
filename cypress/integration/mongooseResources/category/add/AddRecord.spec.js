@@ -1,11 +1,15 @@
-
 import { mongoose, leftNavbar } from '../../../../support/cssCommonSelectors';
 import { common, navbarTexts } from '../../../../support/texts';
 import { getFormValues } from '../../../../support/helpersMethods';
 import comp from '../../../../support/components';
+import faker from 'faker';
 
 const { inputs, boardView } = mongoose;
-const { inputsTexts  } = common;
+const randomNumbers = faker.random.number();
+const randomText =  faker.lorem.words(5);
+const ownerRandom =  faker.name.firstName();
+const title = faker.commerce.department();
+
 
 describe('[Mongoose resources/ Category] Add record to the category', function () {
   it('Should go to category and add record', function () {
@@ -16,23 +20,23 @@ describe('[Mongoose resources/ Category] Add record to the category', function (
     cy.loginSuccess()
       .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
       .get(comp.common.actionButton).contains(common.buttons.addNew).click()
-      .get(inputs.title).type(inputsTexts.title)
-      .get(inputs.nestedValue).type(inputsTexts.randomNumbers)
-      .get(inputs.nestedField).type(common.randomText)
-      .get(inputs.owner).type(inputsTexts.ownerRandom)
+      .get(inputs.title).type(title)
+      .get(inputs.nestedValue).type(randomNumbers)
+      .get(inputs.nestedField).type(randomText)
+      .get(inputs.owner).type(ownerRandom)
       .get(comp.common.sidebarDrawer).contains(common.save).click()
       .wait('@recordAdded')
-      .get(comp.common.hideSidebar).click()
-      .wait('@listLoaded')
+      .wait(1000)
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{ 
         const finputValues = getFormValues($tr, [1,4,5,6]);
         expect(finputValues) 
           .to.have.members([
-            inputsTexts.randomNumbers, 
-            common.randomText,
-            inputsTexts.ownerRandom,
-            inputsTexts.title,
+            randomNumbers.toString(), 
+            randomText,
+            ownerRandom,
+            title,
           ]);
       });
-  }); 
+      
+  });
 });
