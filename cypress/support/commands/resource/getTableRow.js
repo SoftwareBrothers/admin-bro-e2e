@@ -10,7 +10,7 @@
 
 /**
  * @param {number}  [rowNumber=1]     which row has to be parsed
- * @param {(result: GetTableResult) => voud} callback
+ * @param {(result: GetTableResult) => void} callback
  */
 const getTableRow = (rowNumber = 1, callback) => {
   return cy.get('table').then($table => {

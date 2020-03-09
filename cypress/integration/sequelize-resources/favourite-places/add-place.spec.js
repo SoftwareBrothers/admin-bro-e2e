@@ -1,5 +1,5 @@
 import { common } from '../../../support/texts';
-import comp from '../../../support/components';
+import components from '../../../support/components';
 import faker from 'faker';
 
 describe('[Sequelize Resources/ Favourite places] Enters favourite places', function () {
@@ -8,7 +8,7 @@ describe('[Sequelize Resources/ Favourite places] Enters favourite places', func
     const placeDescription = faker.lorem.paragraph();
 
     cy.addPlace(placeName, placeDescription)
-      .get(comp.common.messageBox).should('be.visible')
-      .get(comp.common.messageBox).should('contain', common.recordCreated);      
+      .get(components.common.messageBox).should('be.visible')
+      .get(components.common.messageBox).should('contain', common.recordCreated);      
   });
 });

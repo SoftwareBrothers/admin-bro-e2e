@@ -1,23 +1,23 @@
 import { common } from '../../../support/texts';
-import comp from '../../../support/components';
+import components from '../../../support/components';
 import faker from 'faker';
+import { routeRecordCreated, routeRecordDeleted } from '../../../support/route-requests';
 
 describe('[Sequelize Resources/ Users] Remove user', function () {
   it('Should enter users and delete created one', function () {
-    const userEmail = 'aaaa'+faker.internet.email();
+    const userEmail = faker.internet.email();
     const userFirstName = faker.name.firstName();
     const userLastName = faker.name.lastName();
 
-    cy.server()
-      .route('GET', '/admin/api/resources/Users/records/*/delete').as('recordDeleted')
-      .route('POST', '/admin/api/resources/Users/actions/new').as('recordCreated');
+    routeRecordCreated('Users');
+    routeRecordDeleted('Users');
 
     cy.addNewUser(userEmail, userLastName, userFirstName)
       .wait('@recordCreated')
-      .get(comp.common.emailsList).contains(userEmail).click()
-      .get(comp.common.actionButton).contains('Delete').click()
+      .get(components.common.emailsList).contains(userEmail).click()
+      .get(components.common.actionButton).contains('Delete').click()
       .wait('@recordDeleted').its('status').should('eql', 200)
-      .get(comp.common.messageBox).should('be.visible')
-      .get(comp.common.messageBox).should('contain', common.recordDeleted);
+      .get(components.common.messageBox).should('be.visible')
+      .get(components.common.messageBox).should('contain', common.recordDeleted);
   });
 });

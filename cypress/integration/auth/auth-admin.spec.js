@@ -1,4 +1,4 @@
-import comp from '../../support/components';
+import components from '../../support/components';
 import { common } from '../../support/texts';
 
 describe('[Auth - admin] Visit admin and authenticate', () => {
@@ -7,8 +7,8 @@ describe('[Auth - admin] Visit admin and authenticate', () => {
   });
   it('Should visit admin and provide wrong credentials', () => {
     cy.loginFail();
-    cy.get(comp.common.messageBox)
-      .contains(common.authFailed)
+    cy.get(components.common.messageBox)
+      .contains(common.authFailedMessage)
       .should('be.visible');
   });
 });

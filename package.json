@@ -14,7 +14,7 @@
     "faker": "^4.1.0"
   },
   "scripts": {
-    "lint": "eslint cypress",
+    "lint": "eslint .",
     "fix": "eslint --fix cypress",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"

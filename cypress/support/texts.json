@@ -42,6 +42,6 @@
     "randomText": "something",
     "recordCreated": "Successfully created a new record",
     "recordDeleted": "Successfully deleted given record",
-    "authFailed": "Wrong email and/or password"
+    "authFailedMessage": "Wrong email and/or password"
   }
 }

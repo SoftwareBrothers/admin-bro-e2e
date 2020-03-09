@@ -1,39 +1,38 @@
 import { mongoose, leftNavbar } from '../../../../support/cssCommonSelectors';
 import { common, navbarTexts } from '../../../../support/texts';
-import { getFormValues } from '../../../../support/helpersMethods';
-import comp from '../../../../support/components';
+import { getValuesFromTableRow } from '../../../../support/helpersMethods';
+import components from '../../../../support/components';
 import faker from 'faker';
+import { routeRecordCreated, routeListLoaded } from '../../../../support/route-requests';
 
 const { inputs, boardView } = mongoose;
-const randomNumbers = faker.random.number();
+const randomNumber = faker.random.number();
 const randomText =  faker.lorem.words(5);
-const ownerRandom =  faker.name.firstName();
+const randomOwner =  faker.name.firstName();
 const title = faker.commerce.department();
 
 
 describe('[Mongoose resources/ Category] Add record to the category', function () {
   it('Should go to category and add record', function () {
-    cy.server()
-      .route('POST', '/admin/api/resources/Category/actions/new').as('recordAdded')
-      .route('GET', '/admin/api/resources/Category/actions/list').as('listLoaded');
+    routeRecordCreated('Category');
 
     cy.loginSuccess()
       .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
-      .get(comp.common.actionButton).contains(common.buttons.addNew).click()
+      .get(components.common.actionButton).contains(common.buttons.addNew).click()
       .get(inputs.title).type(title)
-      .get(inputs.nestedValue).type(randomNumbers)
+      .get(inputs.nestedValue).type(randomNumber)
       .get(inputs.nestedField).type(randomText)
-      .get(inputs.owner).type(ownerRandom)
-      .get(comp.common.sidebarDrawer).contains(common.save).click()
-      .wait('@recordAdded')
+      .get(inputs.owner).type(randomOwner)
+      .get(components.common.sidebarDrawer).contains(common.save).click()
+      .wait('@recordCreated')
       .wait(1000)
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{ 
-        const finputValues = getFormValues($tr, [1,4,5,6]);
+        const finputValues = getValuesFromTableRow($tr, [1,4,5,6]);
         expect(finputValues) 
           .to.have.members([
-            randomNumbers.toString(), 
+            randomNumber.toString(), 
             randomText,
-            ownerRandom,
+            randomOwner,
             title,
           ]);
       });

@@ -1,9 +1,9 @@
-import comp from './components';
+import components from './components';
 
 function login(username, password) {
   cy.visit('/admin')
-    .get(comp.common.email).type(username)
-    .get(comp.common.password).type(password)
+    .get(components.common.email).type(username)
+    .get(components.common.password).type(password)
     .get('button').contains('Login').click();
 };
 
