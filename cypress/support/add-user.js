@@ -7,7 +7,7 @@ function userCreate(email, lastName, firstName) {
     .get(components.common.actionButton).contains('Create new').click()
     .url().should('contain', '/admin/resources/Users/actions/new')
     .get(sequelize.inputs.email).type(email)
-    .get('#isMyFavourite').next().click()
+    .get(sequelize.inputs.isMyFavourite).next().click()
     .get(sequelize.inputs.lastName).type(lastName)
     .get(sequelize.inputs.firstName).type(firstName)
     .get(sequelize.inputs.gender).next().click()

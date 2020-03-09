@@ -13,7 +13,7 @@ describe('[Mongoose resources/ Comment]Adding new record to comment', function (
     cy.loginSuccess() 
       .get(leftNavbar.mongoose.comment).contains(navbarTexts.mongoose.comment).click()
       .get(components.common.actionButton).contains(common.buttons.addNew).click()
-      .get('[for="category"]').next().click()
+      .get(inputs.categoryLabel).next().click()
       .get(buttons.dropDownOption).then($element=>{
         const category = $element.text();
         cy.wrap(category).as('category');

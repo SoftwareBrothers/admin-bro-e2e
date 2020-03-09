@@ -17,6 +17,7 @@ const components = {
     calendarToday: '.react-datepicker__day--today',
     dropdownFirstOption: '#react-select-3-option-0',
     nameList: '[data-testid="property-list-name"]',
+    userId: '[for="userId"]',
   },
   complicated: {
     birthPlace: '[data-testid="property-list-nestedDetails.placeOfBirth"]',

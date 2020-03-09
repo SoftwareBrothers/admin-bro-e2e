@@ -15,9 +15,11 @@ const title = faker.commerce.department();
 describe('[Mongoose resources/ Category] Add record to the category', function () {
   it('Should go to category and add record', function () {
     routeRecordCreated('Category');
+    routeListLoaded('Category');
 
     cy.loginSuccess()
       .get(leftNavbar.mongoose.category).contains(navbarTexts.mongoose.category).click()
+      .wait('@listLoaded')
       .get(components.common.actionButton).contains(common.buttons.addNew).click()
       .get(inputs.title).type(title)
       .get(inputs.nestedValue).type(randomNumber)
@@ -25,7 +27,7 @@ describe('[Mongoose resources/ Category] Add record to the category', function (
       .get(inputs.owner).type(randomOwner)
       .get(components.common.sidebarDrawer).contains(common.save).click()
       .wait('@recordCreated')
-      .wait(1000)
+      .wait('@listLoaded')
       .get(boardView.table).find(boardView.tableTr).eq(1).then($tr=>{ 
         const finputValues = getValuesFromTableRow($tr, [1,4,5,6]);
         expect(finputValues) 

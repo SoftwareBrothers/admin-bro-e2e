@@ -33,7 +33,8 @@
       "personAge": "#nestedDetails\\.age",
       "height": "#nestedDetails\\.height",
       "birthPlace": "#nestedDetails\\.placeOfBirth",
-      "extremlyNested": "#nestedDetails\\.nested\\.extremelyNested"
+      "extremlyNested": "#nestedDetails\\.nested\\.extremelyNested",
+      "categoryLabel": "[for=\"category\"]"
     },
     "calendar": {
       "openCalendar": ".open",
