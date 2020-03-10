@@ -1,0 +1,47 @@
+{
+  "navbarTexts": {
+    "mongoose": {
+      "category": "Category",
+      "comment": "Comment",
+      "complicated": "Complicated"
+    },
+    "customized": {
+      "user": "User",
+      "page": "Page",
+      "article": "Article 2"
+    }
+  },
+  "common": {
+    "buttons": {
+      "addNew": "Create new",
+      "remove": "Delete",
+      "name": "Name",
+      "filter": "Filter",
+      "save": "Save"
+    },
+    "errorMsg": {
+      "titleField": "Path `title` is required.",
+      "validationDiv": "There are validation errors - check them out below",
+      "emailField": "Path `email` is required.",
+      "authPasswordField": "Path `auth.password` is required."
+    },
+    "inputsTexts": {
+      "randomNumbers": "123533456789",
+      "ownerRandom": "random owner",
+      "title": "Aabrons",
+      "nestedValue": "50400",
+      "nestedField": "10-900 arnold",
+      "name": "Adminator",
+      "personAge": "3",
+      "height": "176",
+      "birthPlace": "Wroclaw",
+      "extremlyNested": "I am nested as hell",
+      "password": "password123"
+    },
+    "save": "Save",
+    "randomText": "something",
+    "recordCreated": "Successfully created a new record",
+    "recordDeleted": "Successfully deleted given record",
+    "authFailedMessage": "Wrong email and/or password"
+  }
+}

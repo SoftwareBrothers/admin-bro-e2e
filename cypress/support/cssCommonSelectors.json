@@ -1,0 +1,140 @@
+{
+  "leftNavbar": {
+    "mongoose": {
+      "category": "a[href=\"/admin/resources/Category\"]",
+      "comment": "a[href=\"/admin/resources/Comment\"]",
+      "complicated": "a[href=\"/admin/resources/Complicated\"]"
+    },
+    "customized": {
+      "user": "a[href=\"/admin/resources/User\"]",
+      "page": "a[href=\"/admin/resources/Page\"]"
+    },
+    "sequelize": {
+      "users": "a[href=\"/admin/resources/Users\"]",
+      "favouritePlaces": "a[href=\"/admin/resources/FavouritePlaces\"]"
+    }
+  },
+  "propertyTypes": {
+    "reference": {
+      "dropDown": "form .control > div > div",
+      "dropDownList": "form .control > div:last-child > div:last-child > div > div"
+    }
+  },
+  "mongoose": {
+    "inputs": {
+      "nestedValue": "#nested\\.value",
+      "nestedField": "#nested\\.field",
+      "owner": "#owner",
+      "createdAt": "#createdAt",
+      "title": "#title",
+      "checkBoxFlagged": "[data-testid=\"property-edit-flagged\"]",
+      "content": "#content",
+      "name": "#name",
+      "personAge": "#nestedDetails\\.age",
+      "height": "#nestedDetails\\.height",
+      "birthPlace": "#nestedDetails\\.placeOfBirth",
+      "extremlyNested": "#nestedDetails\\.nested\\.extremelyNested",
+      "categoryLabel": "[for=\"category\"]"
+    },
+    "calendar": {
+      "openCalendar": ".open",
+      "today": ".today",
+      "month": ".open .dayContainer",
+      "day": ".flatpickr-day",
+      "todayClass": ".open .dayContainer .today"
+    },
+    "buttons": {
+      "save": "button[type = 'submit']",
+      "remove": ".icomoon-remove-2",
+      "edit": ".icomoon-edit",
+      "back": ".icomoon-pagination-left",
+      "addIcon": ".icomoon-add",
+      "dropDownButton": ".css-1vcs26a-control > .css-1wy0on6 > .css-16pqwjk-indicatorContainer",
+      "dropDownOption": "#react-select-3-option-0",
+      "dropDownOptionsClass": ".css-1f8bwgw-option"
+    },
+    "validationFields": {
+      "validationInput": ".is-danger",
+      "validationDiv": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
+    },
+    "boardView": {
+      "table": "table",
+      "tableTr": "tr",
+      "tableTds": "td",
+      "tableTdClass": ".record-in-list__Td-sc-145opzz-0",
+      "tableFirstDataRow": "tbody tr:first-child > td",
+      "sorting": {
+        "sortByIdButton": "a[href=\"/?direction=desc&sortBy=_id\"]"
+      }
+    }
+  },
+  "sequelize": {
+    "inputs": {
+      "name": "#name",
+      "description": "#description",
+      "email": "#email",
+      "isMyFavourite": "#isMyFavourite",
+      "lastName": "#lastName",
+      "firstName": "#firstName",
+      "gender": "[for='gender']",
+      "male": "#react-select-4-option-0",
+      "female": "#react-select-4-option-1",
+      "tableTds": "td",
+      "tableBody": "tbody",
+      "tableTdClass": ".record-in-list__Td-sc-145opzz-0",
+      "publishedAt": "[class^=\"date-picker\"]",
+      "sorting": {
+        "sortByIdButton": "a[href=\"/?direction=desc&sortBy=_id\"]"
+      }
+    },
+    "buttons": {
+      "save": "button[type = 'submit']",
+      "remove": ".icomoon-remove-2",
+      "edit": ".icomoon-edit",
+      "back": ".icomoon-pagination-left",
+      "addIcon": ".icomoon-add",
+      "dropDownOption": "#react-select-4-option-0",
+      "dropDownOptionsClass": ".css-1f8bwgw-option"
+    }
+  },
+  "customized": {
+    "inputs": {
+      "email": "#email",
+      "authPassword": "#auth\\.password",
+      "title": "#title",
+      "createdAt": "#createdAt",
+      "content": ""
+    },
+    "calendar": {
+      "openCalendar": ".open",
+      "today": ".today",
+      "month": ".open .dayContainer",
+      "day": ".flatpickr-day",
+      "todayClass": ".open .dayContainer .today"
+    },
+    "buttons": {
+      "save": "button[type = 'submit']",
+      "remove": ".icomoon-remove-2",
+      "edit": ".icomoon-edit",
+      "back": ".icomoon-pagination-left",
+      "addIcon": ".icomoon-add",
+      "dropDownButton": ".css-1wy0on6",
+      "dropDownOption": "#react-select-3-option-0",
+      "dropDownOptionsClass": ".css-1f8bwgw-option"
+    },
+    "validationFields": {
+      "validationInput": ".is-danger",
+      "validationDiv": "div.error.notice__NoticeWrapper-w4jhot-0.notification.bermEx"
+    },
+    "boardView": {
+      "table": "table",
+      "tableTr": "tr",
+      "tableTds": "td",
+      "tableBody": "tbody",
+      "tableTdClass": ".record-in-list__Td-sc-145opzz-0",
+      "sorting": {
+        "sortByIdButton": "a[href=\"/?direction=desc&sortBy=_id\"]"
+      }
+    }
+  }
+}

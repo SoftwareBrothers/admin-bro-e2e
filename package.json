@@ -3,16 +3,21 @@
   "version": "1.0.0",
   "description": "Cypress e2e tests for Admin-Bro",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "faker": "^4.1.0",
+    "lodash": "^4.17.15"
+  },
   "devDependencies": {
-    "cypress": "^3.6.1",
+    "cypress": "^4.1.0",
     "eslint": "^6.6.0",
-    "eslint-plugin-cypress": "^2.7.0"
+    "eslint-plugin-cypress": "^2.8.1",
+    "faker": "^4.1.0"
   },
   "scripts": {
     "lint": "eslint .",
-    "fix": "eslint --fix .",
-    "cypress:open": "cypress open"
+    "fix": "eslint --fix cypress",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "repository": {
     "type": "git",

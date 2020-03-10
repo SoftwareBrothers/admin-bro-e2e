@@ -1,8 +1,10 @@
+import components from './components';
+
 function login(username, password) {
   cy.visit('/admin')
-    .get('#email').type(username)
-    .get('#password').type(password)
-    .get('.is-primary').contains('Login').click();
+    .get(components.common.email).type(username)
+    .get(components.common.password).type(password)
+    .get('button').contains('Login').click();
 };
 
 Cypress.Commands.add('loginSuccess', () => {

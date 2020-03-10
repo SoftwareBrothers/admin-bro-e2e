@@ -3,7 +3,9 @@
     "rules": {
         "indent": ["error", 2],
         "eol-last": ["error", "always"],
-        "max-len": ["error", { "code": 80 }],
+        "max-len": ["error", {
+            "code": 100
+        }],
         "semi": ["error", "always"],
         "quotes": ["error", "single"],
         "comma-dangle": ["error", "always-multiline"],
